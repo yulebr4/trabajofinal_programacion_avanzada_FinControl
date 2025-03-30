@@ -14,6 +14,8 @@ namespace trabajofinal_programacion_avanzada_logistica.View
 {
     public partial class MenuPrincipal : Form
     {
+
+        //1.2
         //Campos
         private int borderSize = 2;
 

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using trabajofinal_programacion_avanzada_logistica.Data;
+
 
 namespace trabajofinal_programacion_avanzada_logistica.View
 {
@@ -53,5 +55,29 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             }
 
         }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            using (var db = new ControlGastosDbEntities1())
+            {
+                var usuario = db.Usuarios
+                    .FirstOrDefault(u => u.NombreUsuario == txtUsuario.Text && u.Contraseña == txtContraseña.Text);
+
+                if (usuario != null)
+                {
+                    MessageBox.Show("Login exitoso");
+                    this.Hide();
+                    new MenuPrincipal().Show();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+        
     }
 }
+        
+    
+

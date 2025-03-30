@@ -14,7 +14,7 @@ namespace trabajofinal_programacion_avanzada_logistica
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuPrincipal());
+            Application.Run(new Login());
         }
     }
 }
