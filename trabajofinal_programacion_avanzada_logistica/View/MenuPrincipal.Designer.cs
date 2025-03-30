@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnLogOut = new FontAwesome.Sharp.IconButton();
+            this.btnAcercaDe = new FontAwesome.Sharp.IconButton();
+            this.btnExpeUsuario = new FontAwesome.Sharp.IconButton();
+            this.btnReportes = new FontAwesome.Sharp.IconButton();
+            this.btnSolicitudes = new FontAwesome.Sharp.IconButton();
+            this.btnGastos = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMenuM = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -54,12 +54,12 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.Indigo;
-            this.panelMenu.Controls.Add(this.iconButton7);
-            this.panelMenu.Controls.Add(this.iconButton5);
-            this.panelMenu.Controls.Add(this.iconButton4);
-            this.panelMenu.Controls.Add(this.iconButton3);
-            this.panelMenu.Controls.Add(this.iconButton2);
-            this.panelMenu.Controls.Add(this.iconButton1);
+            this.panelMenu.Controls.Add(this.btnLogOut);
+            this.panelMenu.Controls.Add(this.btnAcercaDe);
+            this.panelMenu.Controls.Add(this.btnExpeUsuario);
+            this.panelMenu.Controls.Add(this.btnReportes);
+            this.panelMenu.Controls.Add(this.btnSolicitudes);
+            this.panelMenu.Controls.Add(this.btnGastos);
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
@@ -68,143 +68,149 @@
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
-            // iconButton7
+            // btnLogOut
             // 
-            this.iconButton7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.iconButton7.FlatAppearance.BorderSize = 0;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.SignOut;
-            this.iconButton7.IconColor = System.Drawing.Color.White;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 40;
-            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.Location = new System.Drawing.Point(0, 661);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton7.Size = new System.Drawing.Size(230, 48);
-            this.iconButton7.TabIndex = 24;
-            this.iconButton7.Tag = "Log out";
-            this.iconButton7.Text = "Log out";
-            this.iconButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton7.UseVisualStyleBackColor = true;
+            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLogOut.IconChar = FontAwesome.Sharp.IconChar.SignOut;
+            this.btnLogOut.IconColor = System.Drawing.Color.White;
+            this.btnLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLogOut.IconSize = 40;
+            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogOut.Location = new System.Drawing.Point(0, 661);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnLogOut.Size = new System.Drawing.Size(230, 48);
+            this.btnLogOut.TabIndex = 24;
+            this.btnLogOut.Tag = "Log out";
+            this.btnLogOut.Text = "Log out";
+            this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // iconButton5
+            // btnAcercaDe
             // 
-            this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Info;
-            this.iconButton5.IconColor = System.Drawing.Color.White;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 40;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(0, 392);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton5.Size = new System.Drawing.Size(230, 81);
-            this.iconButton5.TabIndex = 23;
-            this.iconButton5.Tag = "Acerca De";
-            this.iconButton5.Text = "Acerca De";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = true;
+            this.btnAcercaDe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAcercaDe.FlatAppearance.BorderSize = 0;
+            this.btnAcercaDe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcercaDe.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcercaDe.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAcercaDe.IconChar = FontAwesome.Sharp.IconChar.Info;
+            this.btnAcercaDe.IconColor = System.Drawing.Color.White;
+            this.btnAcercaDe.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAcercaDe.IconSize = 40;
+            this.btnAcercaDe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAcercaDe.Location = new System.Drawing.Point(0, 392);
+            this.btnAcercaDe.Name = "btnAcercaDe";
+            this.btnAcercaDe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAcercaDe.Size = new System.Drawing.Size(230, 81);
+            this.btnAcercaDe.TabIndex = 23;
+            this.btnAcercaDe.Tag = "Acerca De";
+            this.btnAcercaDe.Text = "Acerca De";
+            this.btnAcercaDe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAcercaDe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAcercaDe.UseVisualStyleBackColor = true;
+            this.btnAcercaDe.Click += new System.EventHandler(this.btnAcercaDe_Click);
             // 
-            // iconButton4
+            // btnExpeUsuario
             // 
-            this.iconButton4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.PersonCircleCheck;
-            this.iconButton4.IconColor = System.Drawing.Color.White;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 40;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(0, 311);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton4.Size = new System.Drawing.Size(230, 81);
-            this.iconButton4.TabIndex = 22;
-            this.iconButton4.Tag = "Experiencia de Usuario";
-            this.iconButton4.Text = "Experiencia de  Usuario";
-            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = true;
+            this.btnExpeUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExpeUsuario.FlatAppearance.BorderSize = 0;
+            this.btnExpeUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExpeUsuario.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExpeUsuario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnExpeUsuario.IconChar = FontAwesome.Sharp.IconChar.PersonCircleCheck;
+            this.btnExpeUsuario.IconColor = System.Drawing.Color.White;
+            this.btnExpeUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExpeUsuario.IconSize = 40;
+            this.btnExpeUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExpeUsuario.Location = new System.Drawing.Point(0, 311);
+            this.btnExpeUsuario.Name = "btnExpeUsuario";
+            this.btnExpeUsuario.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnExpeUsuario.Size = new System.Drawing.Size(230, 81);
+            this.btnExpeUsuario.TabIndex = 22;
+            this.btnExpeUsuario.Tag = "Experiencia de Usuario";
+            this.btnExpeUsuario.Text = "Exp de Usuario";
+            this.btnExpeUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExpeUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExpeUsuario.UseVisualStyleBackColor = true;
+            this.btnExpeUsuario.Click += new System.EventHandler(this.btnExpeUsuario_Click);
             // 
-            // iconButton3
+            // btnReportes
             // 
-            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
-            this.iconButton3.IconColor = System.Drawing.Color.White;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 40;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(0, 243);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton3.Size = new System.Drawing.Size(230, 68);
-            this.iconButton3.TabIndex = 21;
-            this.iconButton3.Tag = "Reportes";
-            this.iconButton3.Text = "Reportes";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReportes.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
+            this.btnReportes.IconColor = System.Drawing.Color.White;
+            this.btnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReportes.IconSize = 40;
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(0, 243);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnReportes.Size = new System.Drawing.Size(230, 68);
+            this.btnReportes.TabIndex = 21;
+            this.btnReportes.Tag = "Reportes";
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
-            // iconButton2
+            // btnSolicitudes
             // 
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.RectangleList;
-            this.iconButton2.IconColor = System.Drawing.Color.White;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 40;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 169);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton2.Size = new System.Drawing.Size(230, 74);
-            this.iconButton2.TabIndex = 20;
-            this.iconButton2.Tag = "Solicitudes";
-            this.iconButton2.Text = "Solicitudes";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.btnSolicitudes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSolicitudes.FlatAppearance.BorderSize = 0;
+            this.btnSolicitudes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSolicitudes.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSolicitudes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSolicitudes.IconChar = FontAwesome.Sharp.IconChar.RectangleList;
+            this.btnSolicitudes.IconColor = System.Drawing.Color.White;
+            this.btnSolicitudes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSolicitudes.IconSize = 40;
+            this.btnSolicitudes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSolicitudes.Location = new System.Drawing.Point(0, 169);
+            this.btnSolicitudes.Name = "btnSolicitudes";
+            this.btnSolicitudes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSolicitudes.Size = new System.Drawing.Size(230, 74);
+            this.btnSolicitudes.TabIndex = 20;
+            this.btnSolicitudes.Tag = "Solicitudes";
+            this.btnSolicitudes.Text = "Solicitudes";
+            this.btnSolicitudes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSolicitudes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSolicitudes.UseVisualStyleBackColor = true;
+            this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
             // 
-            // iconButton1
+            // btnGastos
             // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.MoneyBillTrendUp;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 40;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 102);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton1.Size = new System.Drawing.Size(230, 67);
-            this.iconButton1.TabIndex = 19;
-            this.iconButton1.Tag = "Gastos";
-            this.iconButton1.Text = "Gastos";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.btnGastos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGastos.FlatAppearance.BorderSize = 0;
+            this.btnGastos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGastos.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGastos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGastos.IconChar = FontAwesome.Sharp.IconChar.MoneyBillTrendUp;
+            this.btnGastos.IconColor = System.Drawing.Color.White;
+            this.btnGastos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGastos.IconSize = 40;
+            this.btnGastos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGastos.Location = new System.Drawing.Point(0, 102);
+            this.btnGastos.Name = "btnGastos";
+            this.btnGastos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnGastos.Size = new System.Drawing.Size(230, 67);
+            this.btnGastos.TabIndex = 19;
+            this.btnGastos.Tag = "Gastos";
+            this.btnGastos.Text = "Gastos";
+            this.btnGastos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGastos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGastos.UseVisualStyleBackColor = true;
+            this.btnGastos.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // panel1
             // 
@@ -355,12 +361,12 @@
         private System.Windows.Forms.Button btnMazimizar;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton5;
+        private FontAwesome.Sharp.IconButton btnGastos;
+        private FontAwesome.Sharp.IconButton btnExpeUsuario;
+        private FontAwesome.Sharp.IconButton btnReportes;
+        private FontAwesome.Sharp.IconButton btnSolicitudes;
+        private FontAwesome.Sharp.IconButton btnAcercaDe;
         private FontAwesome.Sharp.IconButton btnMenuM;
-        private FontAwesome.Sharp.IconButton iconButton7;
+        private FontAwesome.Sharp.IconButton btnLogOut;
     }
 }

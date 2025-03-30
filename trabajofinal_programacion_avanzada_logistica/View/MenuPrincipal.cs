@@ -278,5 +278,40 @@ namespace trabajofinal_programacion_avanzada_logistica.View
                 }
             }
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            new Gastos().Show();
+        }
+
+        private void btnSolicitudes_Click(object sender, EventArgs e)
+        {
+            new Solicitudes().Show();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            new Reportes().Show();
+        }
+
+        private void btnExpeUsuario_Click(object sender, EventArgs e)
+        {
+            new ExperienciaUsuario().Show();
+        }
+
+        private void btnAcercaDe_Click(object sender, EventArgs e)
+        {
+            new AcercaDe().Show();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            // Cerrar el formulario actual (MenuPrincipal)
+            this.Hide();
+
+            // Abrir el formulario de login
+            Login loginForm = new Login();
+            loginForm.Show();
+        }
     }
 }

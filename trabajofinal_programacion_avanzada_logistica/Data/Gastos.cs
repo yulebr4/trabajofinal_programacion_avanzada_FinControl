@@ -14,14 +14,21 @@ namespace trabajofinal_programacion_avanzada_logistica.Data
     
     public partial class Gastos
     {
+        public Gastos()
+        {
+            this.Solicitudes = new HashSet<Solicitudes>();
+        }
+    
         public int Id { get; set; }
         public int ProyectoId { get; set; }
+        public int UsuarioId { get; set; }
         public decimal Monto { get; set; }
         public string Categoria { get; set; }
-        public string Descripcion { get; set; }
         public string Estado { get; set; }
         public Nullable<System.DateTime> FechaRegistro { get; set; }
     
         public virtual Proyectos Proyectos { get; set; }
+        public virtual Usuarios Usuarios { get; set; }
+        public virtual ICollection<Solicitudes> Solicitudes { get; set; }
     }
 }

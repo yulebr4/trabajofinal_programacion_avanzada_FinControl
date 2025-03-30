@@ -13,10 +13,10 @@ namespace trabajofinal_programacion_avanzada_logistica.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ControlGastosDbEntities1 : DbContext
+    public partial class FinControlDBEntities : DbContext
     {
-        public ControlGastosDbEntities1()
-            : base("name=ControlGastosDbEntities1")
+        public FinControlDBEntities()
+            : base("name=FinControlDBEntities")
         {
         }
     
@@ -27,7 +27,8 @@ namespace trabajofinal_programacion_avanzada_logistica.Data
     
         public DbSet<Gastos> Gastos { get; set; }
         public DbSet<Proyectos> Proyectos { get; set; }
-        public DbSet<Tareas> Tareas { get; set; }
+        public DbSet<Reportes> Reportes { get; set; }
+        public DbSet<Solicitudes> Solicitudes { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
     }
 }

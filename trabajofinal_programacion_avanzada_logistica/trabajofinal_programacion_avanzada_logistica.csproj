@@ -180,7 +180,10 @@
     <Compile Include="Data\Proyectos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Tareas.cs">
+    <Compile Include="Data\Reportes.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Solicitudes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Usuarios.cs">
@@ -197,6 +200,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="View\AcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AcercaDe.Designer.cs">
+      <DependentUpon>AcercaDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExperienciaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ExperienciaUsuario.Designer.cs">
+      <DependentUpon>ExperienciaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Gastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Gastos.Designer.cs">
+      <DependentUpon>Gastos.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +229,18 @@
     </Compile>
     <Compile Include="View\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reportes.Designer.cs">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Solicitudes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Solicitudes.Designer.cs">
+      <DependentUpon>Solicitudes.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -236,12 +269,11 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Data\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Data\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

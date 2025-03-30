@@ -21,7 +21,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
         private const int WM_NCLBUTTONDOWM = 0xA1;
         private const int HT_CAPTION = 0x2;
@@ -58,10 +58,10 @@ namespace trabajofinal_programacion_avanzada_logistica.View
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            using (var db = new ControlGastosDbEntities1())
+            using (var db = new FinControlDBEntities())
             {
                 var usuario = db.Usuarios
-                    .FirstOrDefault(u => u.NombreUsuario == txtUsuario.Text && u.Contraseña == txtContraseña.Text);
+                    .FirstOrDefault(u => u.Nombre == txtUsuario.Text && u.Contraseña == txtContraseña.Text);
 
                 if (usuario != null)
                 {

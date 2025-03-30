@@ -12,16 +12,13 @@ namespace trabajofinal_programacion_avanzada_logistica.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Tareas
+    public partial class Reportes
     {
         public int Id { get; set; }
-        public int ProyectoId { get; set; }
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
-        public System.DateTime FechaInicio { get; set; }
-        public Nullable<System.DateTime> FechaFin { get; set; }
-        public string Estado { get; set; }
+        public int UsuarioId { get; set; }
+        public string NombreArchivo { get; set; }
+        public Nullable<System.DateTime> FechaGeneracion { get; set; }
     
-        public virtual Proyectos Proyectos { get; set; }
+        public virtual Usuarios Usuarios { get; set; }
     }
 }

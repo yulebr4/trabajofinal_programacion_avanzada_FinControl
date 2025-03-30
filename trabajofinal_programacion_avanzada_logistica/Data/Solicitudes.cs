@@ -12,22 +12,15 @@ namespace trabajofinal_programacion_avanzada_logistica.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuarios
+    public partial class Solicitudes
     {
-        public Usuarios()
-        {
-            this.Gastos = new HashSet<Gastos>();
-            this.Reportes = new HashSet<Reportes>();
-            this.Solicitudes = new HashSet<Solicitudes>();
-        }
-    
         public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Correo { get; set; }
-        public string Contraseña { get; set; }
+        public int UsuarioId { get; set; }
+        public int GastoId { get; set; }
+        public string Estado { get; set; }
+        public Nullable<System.DateTime> FechaSolicitud { get; set; }
     
-        public virtual ICollection<Gastos> Gastos { get; set; }
-        public virtual ICollection<Reportes> Reportes { get; set; }
-        public virtual ICollection<Solicitudes> Solicitudes { get; set; }
+        public virtual Gastos Gastos { get; set; }
+        public virtual Usuarios Usuarios { get; set; }
     }
 }

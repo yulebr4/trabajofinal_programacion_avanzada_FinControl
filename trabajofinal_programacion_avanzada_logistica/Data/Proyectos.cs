@@ -17,17 +17,14 @@ namespace trabajofinal_programacion_avanzada_logistica.Data
         public Proyectos()
         {
             this.Gastos = new HashSet<Gastos>();
-            this.Tareas = new HashSet<Tareas>();
         }
     
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public System.DateTime FechaInicio { get; set; }
-        public Nullable<System.DateTime> FechaFin { get; set; }
-        public string Estado { get; set; }
+        public System.DateTime FechaFin { get; set; }
     
         public virtual ICollection<Gastos> Gastos { get; set; }
-        public virtual ICollection<Tareas> Tareas { get; set; }
     }
 }
