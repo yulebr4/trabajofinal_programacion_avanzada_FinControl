@@ -57,7 +57,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(173, 637);
+            this.panel1.Size = new System.Drawing.Size(198, 637);
             this.panel1.TabIndex = 1;
             // 
             // panel3
@@ -72,17 +72,17 @@
             this.btnMenuPrincipal.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnMenuPrincipal.FlatAppearance.BorderSize = 0;
             this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuPrincipal.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuPrincipal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnMenuPrincipal.IconChar = FontAwesome.Sharp.IconChar.SignOut;
             this.btnMenuPrincipal.IconColor = System.Drawing.Color.White;
             this.btnMenuPrincipal.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMenuPrincipal.IconSize = 40;
             this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 589);
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 536);
             this.btnMenuPrincipal.Name = "btnMenuPrincipal";
             this.btnMenuPrincipal.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnMenuPrincipal.Size = new System.Drawing.Size(173, 48);
+            this.btnMenuPrincipal.Size = new System.Drawing.Size(198, 101);
             this.btnMenuPrincipal.TabIndex = 26;
             this.btnMenuPrincipal.Tag = "Log out";
             this.btnMenuPrincipal.Text = "Menu Principal";
@@ -99,9 +99,9 @@
             this.panel2.Controls.Add(this.btnExpandir);
             this.panel2.Controls.Add(this.btnMinimizar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(173, 0);
+            this.panel2.Location = new System.Drawing.Point(198, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(854, 42);
+            this.panel2.Size = new System.Drawing.Size(829, 42);
             this.panel2.TabIndex = 5;
             // 
             // label1
@@ -121,7 +121,7 @@
             this.btnCerrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCerrar.BackgroundImage")));
             this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Location = new System.Drawing.Point(810, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(785, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(44, 33);
             this.btnCerrar.TabIndex = 7;
@@ -135,7 +135,7 @@
             this.btnExpandir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExpandir.BackgroundImage")));
             this.btnExpandir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnExpandir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExpandir.Location = new System.Drawing.Point(760, 0);
+            this.btnExpandir.Location = new System.Drawing.Point(735, 0);
             this.btnExpandir.Name = "btnExpandir";
             this.btnExpandir.Size = new System.Drawing.Size(44, 33);
             this.btnExpandir.TabIndex = 6;
@@ -149,7 +149,7 @@
             this.btnMinimizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.BackgroundImage")));
             this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Location = new System.Drawing.Point(710, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(685, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(44, 33);
             this.btnMinimizar.TabIndex = 5;
@@ -202,7 +202,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(193, 244);
+            this.label4.Location = new System.Drawing.Point(225, 257);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(188, 23);
             this.label4.TabIndex = 12;
@@ -212,7 +212,7 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(197, 300);
+            this.dataGridView1.Location = new System.Drawing.Point(219, 301);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;

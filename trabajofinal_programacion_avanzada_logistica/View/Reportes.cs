@@ -16,5 +16,35 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         {
             InitializeComponent();
         }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnExpandir_Click(object sender, EventArgs e)
+        {
+
+            if (this.WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            // Crear una instancia del formulario del menú principal
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Show(); // Mostrar el formulario del menú principal
+
+            // Cerrar el formulario actual (Registro de Gastos)
+            this.Close();
+        }
     }
 }
