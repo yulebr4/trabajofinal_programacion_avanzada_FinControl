@@ -269,7 +269,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
 
             //Vamos a agregar una condicion
             //Con esto colapsamos el menu
-            if (this.panelMenu.Width > 200)
+            if (this.panelMenu.Width < 200)
             {
                 panelMenu.Width = 100;
                 pictureBox1.Visible = false;

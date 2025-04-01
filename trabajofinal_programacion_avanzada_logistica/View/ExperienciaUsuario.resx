@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="guna2HtmlLabel1.Text" xml:space="preserve">
-    <value>FinControl es un sistema integral de gestión de gastos corporativos y solicitudes de reembolso, diseñado para simplificar y agilizar el proceso de registro, aprobación y seguimiento de gastos empresariales. El sistema permite a los empleados registrar sus gastos, adjuntar comprobantes digitales, y solicitar reembolsos de manera eficiente, mientras proporciona a los administradores y al departamento financiero herramientas robustas para la revisión y aprobación.</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnCerrar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -142,7 +139,7 @@
         X+/vFhd80ndU/siWXqtLt6WcL2qTya3zA88XOOhZzMe5AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnMinimizar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAYhJREFUaEPtmUtOAzEQRMOGYwBnIYGbwRECXI7wuQCfBZvUVNTSRGr1giZTHQ+R
@@ -154,9 +151,5 @@
         Pxeste3f4RwDwMek9rphtz5nEaP8MnodhFVvn9Ba3A3/YrKz1pNvvtPpdJqxA4VsF58s6Xb/AAAAAElF
         TkSuQmCC
 </value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>FinControl fue fundado y desarrollado por Yulenny Bonilla como parte de un proyecto de programación avanzada. La visión de Yulenny era crear una solución que no solo facilitara la gestión de gastos empresariales, sino que también mejorara la transparencia y eficiencia en los procesos financieros internos de cualquier organización.
-Principios de Diseño</value>
   </data>
 </root>

@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AcercaDe));
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnMenuPrincipal = new FontAwesome.Sharp.IconButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnExpandir = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,21 +63,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(159, 450);
+            this.panel1.Size = new System.Drawing.Size(159, 543);
             this.panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.btnCerrar);
-            this.panel2.Controls.Add(this.btnExpandir);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(159, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(641, 42);
-            this.panel2.TabIndex = 3;
             // 
             // btnMenuPrincipal
             // 
@@ -91,7 +78,7 @@
             this.btnMenuPrincipal.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMenuPrincipal.IconSize = 40;
             this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 402);
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 495);
             this.btnMenuPrincipal.Name = "btnMenuPrincipal";
             this.btnMenuPrincipal.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnMenuPrincipal.Size = new System.Drawing.Size(159, 48);
@@ -103,6 +90,29 @@
             this.btnMenuPrincipal.UseVisualStyleBackColor = true;
             this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenuPrincipal_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.btnCerrar);
+            this.panel2.Controls.Add(this.btnExpandir);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(159, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(755, 42);
+            this.panel2.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 33);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Acerca De";
+            // 
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -110,7 +120,7 @@
             this.btnCerrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCerrar.BackgroundImage")));
             this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Location = new System.Drawing.Point(597, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(711, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(44, 33);
             this.btnCerrar.TabIndex = 7;
@@ -124,7 +134,7 @@
             this.btnExpandir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExpandir.BackgroundImage")));
             this.btnExpandir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnExpandir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExpandir.Location = new System.Drawing.Point(547, 0);
+            this.btnExpandir.Location = new System.Drawing.Point(661, 0);
             this.btnExpandir.Name = "btnExpandir";
             this.btnExpandir.Size = new System.Drawing.Size(44, 33);
             this.btnExpandir.TabIndex = 6;
@@ -138,22 +148,12 @@
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(497, 0);
+            this.button1.Location = new System.Drawing.Point(611, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(44, 33);
             this.button1.TabIndex = 5;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 33);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Acerca De";
             // 
             // label2
             // 
@@ -169,9 +169,9 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel1.Location = new System.Drawing.Point(159, 415);
+            this.guna2Panel1.Location = new System.Drawing.Point(159, 508);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(641, 35);
+            this.guna2Panel1.Size = new System.Drawing.Size(755, 35);
             this.guna2Panel1.TabIndex = 5;
             // 
             // label3
@@ -189,7 +189,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 543);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);

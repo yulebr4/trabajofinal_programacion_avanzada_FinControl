@@ -91,6 +91,9 @@ namespace trabajofinal_programacion_avanzada_logistica.View
 
             guna2GradientButton1.Text = "Iniciar sesión";
             guna2GradientButton1.Enabled = true;
+
+
+         
         }
 
     }

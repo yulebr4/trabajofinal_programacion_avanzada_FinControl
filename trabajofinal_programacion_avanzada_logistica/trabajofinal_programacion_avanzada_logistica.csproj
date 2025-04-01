@@ -264,11 +264,20 @@
     <EmbeddedResource Include="View\AcercaDe.resx">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ExperienciaUsuario.resx">
+      <DependentUpon>ExperienciaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Gastos.resx">
+      <DependentUpon>Gastos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Solicitudes.resx">
+      <DependentUpon>Solicitudes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
