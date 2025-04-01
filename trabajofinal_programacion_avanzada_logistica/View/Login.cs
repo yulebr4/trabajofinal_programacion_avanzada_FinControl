@@ -8,21 +8,45 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using trabajofinal_programacion_avanzada_logistica.Data;
+using trabajofinal_programacion_avanzada_logistica.Presenter;
 
 
 namespace trabajofinal_programacion_avanzada_logistica.View
 {
-    public partial class Login : Form
+    public partial class Login : Form, ILoginView
     {
+        private LoginPresenter presenter;
+
         public Login()
         {
             InitializeComponent();
+            presenter = new LoginPresenter(this);
+
+
+          
+
         }
+        // Propiedades requeridas por ILoginView
+        public string Usuario => txtUsuario.Text;
+        public string Contraseña => txtContraseña.Text;
+
+        public void MostrarMensaje(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void CerrarFormulario()
+        {
+            this.Hide(); 
+        }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
         private const int WM_NCLBUTTONDOWM = 0xA1;
         private const int HT_CAPTION = 0x2;
 
@@ -53,30 +77,25 @@ namespace trabajofinal_programacion_avanzada_logistica.View
                     SendMessage(this.Handle, WM_NCLBUTTONDOWM, HT_CAPTION, 0);
                 }
             }
-
         }
 
-        private void guna2GradientButton1_Click(object sender, EventArgs e)
-        {
-            using (var db = new FinControlDBEntities())
-            {
-                var usuario = db.Usuarios
-                    .FirstOrDefault(u => u.Nombre == txtUsuario.Text && u.Contraseña == txtContraseña.Text);
-
-                if (usuario != null)
-                {
-                    MessageBox.Show("Login exitoso");
-                    this.Hide();
-                    new MenuPrincipal().Show();
-                }
-                else
-                {
-                    MessageBox.Show("Usuario o contraseña incorrectos", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-        }
         
+
+        private  async void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+
+            guna2GradientButton1.Text = "Cargando...";
+            guna2GradientButton1.Enabled = false;
+
+            await presenter.ValidarCredencialesAsync();
+
+            guna2GradientButton1.Text = "Iniciar sesión";
+            guna2GradientButton1.Enabled = true;
+        }
+
     }
+
+    
 }
         
     

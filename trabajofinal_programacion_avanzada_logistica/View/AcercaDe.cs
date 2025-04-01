@@ -16,5 +16,29 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnExpandir_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMenuPrincipal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

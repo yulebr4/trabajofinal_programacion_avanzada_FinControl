@@ -133,7 +133,7 @@
             this.btnExpeUsuario.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnExpeUsuario.Size = new System.Drawing.Size(230, 81);
             this.btnExpeUsuario.TabIndex = 22;
-            this.btnExpeUsuario.Tag = "Experiencia de Usuario";
+            this.btnExpeUsuario.Tag = "Exp de Usuario";
             this.btnExpeUsuario.Text = "Exp de Usuario";
             this.btnExpeUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExpeUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -327,6 +327,7 @@
             this.panelFondo.Name = "panelFondo";
             this.panelFondo.Size = new System.Drawing.Size(1021, 649);
             this.panelFondo.TabIndex = 2;
+            this.panelFondo.Tag = "Exp de Usuario";
             // 
             // MenuPrincipal
             // 

@@ -9,11 +9,21 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using trabajofinal_programacion_avanzada_logistica.Presenter;
 
 namespace trabajofinal_programacion_avanzada_logistica.View
 {
-    public partial class MenuPrincipal : Form
+    public partial class MenuPrincipal : Form, IMenuPrincipalView
     {
+
+        private MenuPrincipalPresenter presenter;
+
+        public event EventHandler OnGastosClicked;
+        public event EventHandler OnSolicitudesClicked;
+        public event EventHandler OnReportesClicked;
+        public event EventHandler OnExperienciaUsuarioClicked;
+        public event EventHandler OnAcercaDeClicked;
+        public event EventHandler OnLogoutClicked;
 
         //1.2
         //Campos
@@ -30,7 +40,21 @@ namespace trabajofinal_programacion_avanzada_logistica.View
 
             //Color de los bordes
             this.BackColor = Color.FromArgb(255, 255, 255);
+
+            // Inicializar Presentador
+            presenter = new MenuPrincipalPresenter(this);
         }
+
+        public void ShowForm() => this.Show();
+        public void CloseForm() => this.Close();
+        public void HideForm() => this.Hide();
+
+        private void iconButton1_Click(object sender, EventArgs e) => OnGastosClicked?.Invoke(this, EventArgs.Empty);
+        private void btnSolicitudes_Click(object sender, EventArgs e) => OnSolicitudesClicked?.Invoke(this, EventArgs.Empty);
+        private void btnReportes_Click(object sender, EventArgs e) => OnReportesClicked?.Invoke(this, EventArgs.Empty);
+        private void btnExpeUsuario_Click(object sender, EventArgs e) => OnExperienciaUsuarioClicked?.Invoke(this, EventArgs.Empty);
+        private void btnAcercaDe_Click(object sender, EventArgs e) => OnAcercaDeClicked?.Invoke(this, EventArgs.Empty);
+        private void btnLogOut_Click(object sender, EventArgs e) => OnLogoutClicked?.Invoke(this, EventArgs.Empty);
 
         private Size formSize;
         private void Form1_Load(object sender, EventArgs e)
@@ -210,6 +234,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+
         }
 
         private void btnMazimizar_Click(object sender, EventArgs e)
@@ -231,13 +256,15 @@ namespace trabajofinal_programacion_avanzada_logistica.View
 
         }
 
+
+
         //Evento ContraerMenu
         private void btnMenuM_Click(object sender, EventArgs e)
         {
             ContraerMenu();
         }
 
-        private void ContraerMenu()
+        public void ContraerMenu()
         {
 
             //Vamos a agregar una condicion
@@ -279,39 +306,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             }
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            new Gastos().Show();
-        }
-
-        private void btnSolicitudes_Click(object sender, EventArgs e)
-        {
-            new Solicitudes().Show();
-        }
-
-        private void btnReportes_Click(object sender, EventArgs e)
-        {
-            new Reportes().Show();
-        }
-
-        private void btnExpeUsuario_Click(object sender, EventArgs e)
-        {
-            new ExperienciaUsuario().Show();
-        }
-
-        private void btnAcercaDe_Click(object sender, EventArgs e)
-        {
-            new AcercaDe().Show();
-        }
-
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            // Cerrar el formulario actual (MenuPrincipal)
-            this.Hide();
-
-            // Abrir el formulario de login
-            Login loginForm = new Login();
-            loginForm.Show();
-        }
+      
+        
     }
 }

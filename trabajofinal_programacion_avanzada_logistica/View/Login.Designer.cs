@@ -159,6 +159,7 @@
             this.txtContraseña.Location = new System.Drawing.Point(51, 163);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.PlaceholderText = "";
             this.txtContraseña.SelectedText = "";
             this.txtContraseña.Size = new System.Drawing.Size(260, 32);
@@ -212,7 +213,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.ForeColor = System.Drawing.Color.White;
             this.linkLabel2.LinkColor = System.Drawing.Color.WhiteSmoke;
-            this.linkLabel2.Location = new System.Drawing.Point(121, 314);
+            this.linkLabel2.Location = new System.Drawing.Point(131, 314);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(140, 20);
             this.linkLabel2.TabIndex = 7;
