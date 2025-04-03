@@ -19,10 +19,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
 
         private void btnMenuPrincipal_Click(object sender, EventArgs e)
         {
-            // Crear una instancia del formulario del menú principal
-            MenuPrincipal menu = new MenuPrincipal();
-            menu.Show(); // Mostrar el formulario del menú principal
-
+            
             // Cerrar el formulario actual (Registro de Gastos)
             this.Close();
         }

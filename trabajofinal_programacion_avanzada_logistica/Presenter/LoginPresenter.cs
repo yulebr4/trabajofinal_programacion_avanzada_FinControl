@@ -23,22 +23,26 @@ namespace trabajofinal_programacion_avanzada_logistica.Presenter
 
             using (var db = new FinControlDBEntities())
             {
-                var usuario =await Task.Run(() => db.Usuarios
+                var usuario = await Task.Run(() => db.Usuarios
                     .FirstOrDefault(u => u.Nombre == view.Usuario && u.Contraseña == view.Contraseña));
-
                 if (usuario != null)
                 {
                     view.MostrarMensaje("Login exitoso");
                     view.CerrarFormulario();
-                    new MenuPrincipal().Show();
-                   
+
+                    // Create the MenuPrincipal form
+                    MenuPrincipal menu = new MenuPrincipal();
+                    // Ensure menu starts contracted
+                    menu.ContraerMenu();
+                    // Show the menu
+                    menu.Show();
                 }
                 else
                 {
                     view.MostrarMensaje("Usuario o contraseña incorrectos");
+
+
                 }
-
-
             }
         }
     }

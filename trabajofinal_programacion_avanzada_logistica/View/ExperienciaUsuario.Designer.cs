@@ -320,6 +320,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ExperienciaUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ExperienciaUsuario";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

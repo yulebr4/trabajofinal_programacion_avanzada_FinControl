@@ -49,12 +49,44 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         public void CloseForm() => this.Close();
         public void HideForm() => this.Hide();
 
-        private void iconButton1_Click(object sender, EventArgs e) => OnGastosClicked?.Invoke(this, EventArgs.Empty);
-        private void btnSolicitudes_Click(object sender, EventArgs e) => OnSolicitudesClicked?.Invoke(this, EventArgs.Empty);
-        private void btnReportes_Click(object sender, EventArgs e) => OnReportesClicked?.Invoke(this, EventArgs.Empty);
-        private void btnExpeUsuario_Click(object sender, EventArgs e) => OnExperienciaUsuarioClicked?.Invoke(this, EventArgs.Empty);
-        private void btnAcercaDe_Click(object sender, EventArgs e) => OnAcercaDeClicked?.Invoke(this, EventArgs.Empty);
-        private void btnLogOut_Click(object sender, EventArgs e) => OnLogoutClicked?.Invoke(this, EventArgs.Empty);
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            OnGastosClicked?.Invoke(this, EventArgs.Empty);
+      
+        }
+
+
+
+        private void btnSolicitudes_Click(object sender, EventArgs e)
+        {
+            OnSolicitudesClicked?.Invoke(this, EventArgs.Empty);
+       
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            OnReportesClicked?.Invoke(this, EventArgs.Empty);
+            
+        }
+        private void btnExpeUsuario_Click(object sender, EventArgs e)
+        {
+            OnExperienciaUsuarioClicked?.Invoke(this, EventArgs.Empty);
+         
+        }
+        private void btnAcercaDe_Click(object sender, EventArgs e)
+        {
+            OnAcercaDeClicked?.Invoke(this, EventArgs.Empty);
+            
+        }
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            OnLogoutClicked?.Invoke(this, EventArgs.Empty);
+            this.Hide();
+
+            // Create and show a new login form
+            Login loginForm = new Login();
+            loginForm.Show();
+        }
 
         private Size formSize;
         private void Form1_Load(object sender, EventArgs e)
@@ -251,6 +283,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             Application.Exit();
         }
 
+
         private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
 
@@ -261,52 +294,73 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         //Evento ContraerMenu
         private void btnMenuM_Click(object sender, EventArgs e)
         {
-            ContraerMenu();
-        }
-
-        public void ContraerMenu()
-        {
-
-            //Vamos a agregar una condicion
-            //Con esto colapsamos el menu
-            if (this.panelMenu.Width < 200)
+        
+            // Toggle menu state - if contracted, expand it; if expanded, contract it
+            if (panelMenu.Width == 100)
             {
-                panelMenu.Width = 100;
-                pictureBox1.Visible = false;
-                btnMenuM.Dock = DockStyle.Top;
-
-                //Finalmente crearemos un bucle en los controles del panel menu solamente para
-                //obtener los controles de tipo boton
-
-                foreach(Button menuButton in panelMenu.Controls.OfType<Button>())
-                {
-                    //En los botones del menu eliminanos el texto del boton, alineamos el icono
-                    //del boton en el centro y quitamos el relleno
-                    menuButton.Text = "";
-                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
-                    menuButton.Padding = new Padding(0);
-                }
-            }
-
-            //En caso contrario de que no se cumpla la condicion volvemos a expandir el menu
-            //aqui simplemente revertimos los cambios anteriores
-            //Con esto expandemos el menu
-            else
-            { 
+                // Expand menu
                 panelMenu.Width = 230;
                 pictureBox1.Visible = true;
                 btnMenuM.Dock = DockStyle.None;
 
                 foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
                 {
-                    menuButton.Text ="   " + menuButton.Tag.ToString();
+                    menuButton.Text = "   " + menuButton.Tag.ToString();
                     menuButton.ImageAlign = ContentAlignment.MiddleLeft;
                     menuButton.Padding = new Padding(10, 0, 0, 0);
                 }
             }
-        }
+            else
+            {
+                // Contract menu
+                panelMenu.Width = 100;
+                pictureBox1.Visible = false;
+                btnMenuM.Dock = DockStyle.Top;
 
-      
+                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "";
+                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    menuButton.Padding = new Padding(0);
+                }
+            }
+        }
         
+
+        public void ContraerMenu()
+        {
+
+                // Force menu to contracted state
+                panelMenu.Width = 100;
+                pictureBox1.Visible = false;
+                btnMenuM.Dock = DockStyle.Top;
+
+                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "";
+                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    menuButton.Padding = new Padding(0);
+     
+                }
+            }
+        public void ExpandirMenu()
+        {
+            panelMenu.Width = 230;
+            pictureBox1.Visible = true;
+            btnMenuM.Dock = DockStyle.None;
+
+            foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
+            {
+                menuButton.Text = "   " + menuButton.Tag.ToString();
+                menuButton.ImageAlign = ContentAlignment.MiddleLeft;
+                menuButton.Padding = new Padding(10, 0, 0, 0);
+            }
+        }
     }
 }
+
+
+
+
+
+

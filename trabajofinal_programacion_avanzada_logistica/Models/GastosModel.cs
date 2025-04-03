@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace trabajofinal_programacion_avanzada_logistica.Models
 {
-    internal class Envio
+    public class GastosModel
     {
+        public decimal Monto { get; set; }
+        public string Categoria { get; set; }
+
+        public string Comprobante { get; set; }
     }
 }
+

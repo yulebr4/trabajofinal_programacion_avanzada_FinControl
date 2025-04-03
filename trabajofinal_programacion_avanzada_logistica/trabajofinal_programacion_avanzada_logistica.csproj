@@ -190,8 +190,8 @@
     <Compile Include="Data\Usuarios.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Envio.cs" />
-    <Compile Include="Models\HistorialEnvio.cs" />
+    <Compile Include="Models\GastosModel.cs" />
+    <Compile Include="Presenter\GastosPresenter.cs" />
     <Compile Include="Presenter\LoginPresenter.cs" />
     <Compile Include="Presenter\MenuPrincipalPresenter.cs" />
     <Compile Include="Program.cs" />
@@ -201,6 +201,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Repository\GastosRepository.cs" />
+    <Compile Include="Services\PdfService.cs" />
     <Compile Include="View\AcercaDe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +221,7 @@
     <Compile Include="View\Gastos.Designer.cs">
       <DependentUpon>Gastos.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\IGastosView.cs" />
     <Compile Include="View\ILoginView.cs" />
     <Compile Include="View\IMenuPrincipalView.cs" />
     <Compile Include="View\Login.cs">

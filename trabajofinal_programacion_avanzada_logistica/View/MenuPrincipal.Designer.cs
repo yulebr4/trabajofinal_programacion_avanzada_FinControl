@@ -234,10 +234,10 @@
             this.btnMenuM.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMenuM.IconSize = 40;
             this.btnMenuM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuM.Location = new System.Drawing.Point(167, 0);
+            this.btnMenuM.Location = new System.Drawing.Point(150, 3);
             this.btnMenuM.Name = "btnMenuM";
             this.btnMenuM.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnMenuM.Size = new System.Drawing.Size(57, 60);
+            this.btnMenuM.Size = new System.Drawing.Size(74, 57);
             this.btnMenuM.TabIndex = 24;
             this.btnMenuM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMenuM.UseVisualStyleBackColor = true;

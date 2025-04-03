@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using trabajofinal_programacion_avanzada_logistica.Presenter;
 
 namespace trabajofinal_programacion_avanzada_logistica.View
 {
@@ -15,6 +16,9 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         public Gastos()
         {
             InitializeComponent();
+
+            
+
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -38,15 +42,18 @@ namespace trabajofinal_programacion_avanzada_logistica.View
 
         private void btnMenuPrincipal_Click(object sender, EventArgs e)
         {
-            // Crear una instancia del formulario del menú principal
-            MenuPrincipal menu = new MenuPrincipal();
-            menu.Show(); // Mostrar el formulario del menú principal
-
-            // Cerrar el formulario actual (Registro de Gastos)
+       
             this.Close();
         }
 
+    
+
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardarGastos_Click(object sender, EventArgs e)
         {
 
         }
