@@ -71,8 +71,12 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         private void btnExpeUsuario_Click(object sender, EventArgs e)
         {
             OnExperienciaUsuarioClicked?.Invoke(this, EventArgs.Empty);
-         
+            var vistaExperiencia = new ExperienciaUsuario();
+            var presentador = new ExperienciaUsuarioPresenter(vistaExperiencia); // Conectamos la vista con el Presentador
+            vistaExperiencia.ShowDialog();
         }
+
+        
         private void btnAcercaDe_Click(object sender, EventArgs e)
         {
             OnAcercaDeClicked?.Invoke(this, EventArgs.Empty);
@@ -356,6 +360,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
                 menuButton.Padding = new Padding(10, 0, 0, 0);
             }
         }
+
     }
 }
 

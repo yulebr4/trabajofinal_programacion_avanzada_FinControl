@@ -12,5 +12,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         string Satisfaccion { get; }
         string Comentarios { get; }
         List<string> AreasMejora { get; }
+
+        void MostrarMensaje(string mensaje);
     }
 }

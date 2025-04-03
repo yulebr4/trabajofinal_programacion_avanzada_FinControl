@@ -258,6 +258,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Repository\GastosRepository.cs" />
+    <Compile Include="Services\CorreoService.cs" />
     <Compile Include="Services\PdfService.cs" />
     <Compile Include="View\AcercaDe.cs">
       <SubType>Form</SubType>
