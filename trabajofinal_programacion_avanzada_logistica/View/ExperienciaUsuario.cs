@@ -10,14 +10,30 @@ using System.Windows.Forms;
 
 namespace trabajofinal_programacion_avanzada_logistica.View
 {
-    public partial class ExperienciaUsuario : Form
+    public partial class ExperienciaUsuario : Form, IExperienciaUsuario
     {
+        public event EventHandler OnEnviarClicked;
         public ExperienciaUsuario()
         {
             InitializeComponent();
+            btnEnviar.Click += (s, e) => OnEnviarClicked?.Invoke(this, EventArgs.Empty);
         }
 
-        private void btnMenuPrincipal_Click(object sender, EventArgs e)
+        // Obtiene el valor del RadioButton seleccionado
+        public string Satisfaccion => groupBoxSatisfaccion.Controls
+            .OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text;
+
+        // Obtiene el comentario escrito
+        public string Comentarios => richTextBoxComentarios.Text;
+
+        // Obtiene la lista de CheckBox seleccionados
+        public List<string> AreasMejora => groupBoxMejoras.Controls
+            .OfType<CheckBox>().Where(c => c.Checked).Select(c => c.Text).ToList();
+    
+
+
+
+private void btnMenuPrincipal_Click(object sender, EventArgs e)
         {
             
             // Cerrar el formulario actual (Registro de Gastos)
@@ -42,6 +58,11 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

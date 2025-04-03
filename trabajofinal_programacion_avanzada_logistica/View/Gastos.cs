@@ -11,15 +11,44 @@ using trabajofinal_programacion_avanzada_logistica.Presenter;
 
 namespace trabajofinal_programacion_avanzada_logistica.View
 {
-    public partial class Gastos : Form
+    public partial class Gastos : Form, IGastosView
     {
+        private GastosPresenter presenter;
         public Gastos()
         {
             InitializeComponent();
-
-            
-
+            presenter = new GastosPresenter(this);
         }
+
+        public string Categoria
+        {
+            get => comboBoxCategoria.SelectedItem?.ToString() ?? "";
+            set => comboBoxCategoria.SelectedItem = value;
+        }
+
+        public decimal Monto
+        {
+            get => decimal.TryParse(maskedTextBoxMonto.Text, out var monto) ? monto : 0;
+            set => maskedTextBoxMonto.Text = value.ToString();
+        }
+
+        public DateTime Fecha
+        {
+            get => dateTimePickerFecha.Value;
+            set => dateTimePickerFecha.Value = value;
+        }
+
+        public string Comprobante
+        {
+            get => txtComprobante.Text;
+            set => txtComprobante.Text = value;
+        }
+
+        public int ProyectoId => throw new NotImplementedException();
+
+        public event EventHandler GuardarGasto;
+        public event EventHandler AdjuntarComprobante;
+
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
@@ -55,6 +84,12 @@ namespace trabajofinal_programacion_avanzada_logistica.View
 
         private void btnGuardarGastos_Click(object sender, EventArgs e)
         {
+            GuardarGasto?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdjuntarComprobante?.Invoke(this, EventArgs.Empty);
 
         }
     }

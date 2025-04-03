@@ -10,11 +10,12 @@ namespace trabajofinal_programacion_avanzada_logistica
 {
     internal class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new MenuPrincipal());
         }
     }
 }

@@ -36,6 +36,10 @@ namespace trabajofinal_programacion_avanzada_logistica.Presenter
                     menu.ContraerMenu();
                     // Show the menu
                     menu.Show();
+
+
+
+
                 }
                 else
                 {

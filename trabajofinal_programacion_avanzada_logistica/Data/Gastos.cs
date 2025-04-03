@@ -25,10 +25,14 @@ namespace trabajofinal_programacion_avanzada_logistica.Data
         public decimal Monto { get; set; }
         public string Categoria { get; set; }
         public string Estado { get; set; }
+
+        public string Gasto { get; set; }
         public Nullable<System.DateTime> FechaRegistro { get; set; }
     
         public virtual Proyectos Proyectos { get; set; }
         public virtual Usuarios Usuarios { get; set; }
         public virtual ICollection<Solicitudes> Solicitudes { get; set; }
+        public DateTime Fecha { get; internal set; }
+        public string Comprobante { get; internal set; }
     }
 }

@@ -42,13 +42,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtComprobante = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.btnGuardarGastos = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxMonto = new System.Windows.Forms.MaskedTextBox();
+            this.dateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -174,7 +174,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(241, 127);
+            this.label3.Location = new System.Drawing.Point(241, 133);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 16);
             this.label3.TabIndex = 6;
@@ -205,27 +205,30 @@
             "Transporte",
             "Comida",
             "Material de Papeleria",
-            "Tecnologia"});
+            "Tecnologia",
+            "Proyecto A",
+            "Desarrollo de software"});
             this.comboBoxCategoria.Location = new System.Drawing.Point(339, 81);
             this.comboBoxCategoria.Name = "comboBoxCategoria";
-            this.comboBoxCategoria.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxCategoria.Size = new System.Drawing.Size(200, 24);
             this.comboBoxCategoria.TabIndex = 9;
             // 
-            // textBox3
+            // txtComprobante
             // 
-            this.textBox3.Location = new System.Drawing.Point(339, 241);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 22);
-            this.textBox3.TabIndex = 12;
+            this.txtComprobante.Location = new System.Drawing.Point(339, 241);
+            this.txtComprobante.Name = "txtComprobante";
+            this.txtComprobante.Size = new System.Drawing.Size(200, 22);
+            this.txtComprobante.TabIndex = 12;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(486, 244);
+            this.button1.Location = new System.Drawing.Point(610, 247);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 13;
             this.button1.Text = "Adjuntar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -251,7 +254,7 @@
             // 
             // btnGuardarGastos
             // 
-            this.btnGuardarGastos.Location = new System.Drawing.Point(592, 247);
+            this.btnGuardarGastos.Location = new System.Drawing.Point(702, 247);
             this.btnGuardarGastos.Name = "btnGuardarGastos";
             this.btnGuardarGastos.Size = new System.Drawing.Size(75, 23);
             this.btnGuardarGastos.TabIndex = 16;
@@ -259,23 +262,21 @@
             this.btnGuardarGastos.UseVisualStyleBackColor = true;
             this.btnGuardarGastos.Click += new System.EventHandler(this.btnGuardarGastos_Click);
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(339, 184);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(121, 22);
-            this.maskedTextBox1.TabIndex = 17;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            // 
             // maskedTextBoxMonto
             // 
             this.maskedTextBoxMonto.Location = new System.Drawing.Point(339, 127);
             this.maskedTextBoxMonto.Mask = "99999";
             this.maskedTextBoxMonto.Name = "maskedTextBoxMonto";
-            this.maskedTextBoxMonto.Size = new System.Drawing.Size(121, 22);
+            this.maskedTextBoxMonto.Size = new System.Drawing.Size(200, 22);
             this.maskedTextBoxMonto.TabIndex = 18;
             this.maskedTextBoxMonto.ValidatingType = typeof(int);
+            // 
+            // dateTimePickerFecha
+            // 
+            this.dateTimePickerFecha.Location = new System.Drawing.Point(339, 184);
+            this.dateTimePickerFecha.Name = "dateTimePickerFecha";
+            this.dateTimePickerFecha.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerFecha.TabIndex = 19;
             // 
             // Gastos
             // 
@@ -283,13 +284,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1027, 637);
+            this.Controls.Add(this.dateTimePickerFecha);
             this.Controls.Add(this.maskedTextBoxMonto);
-            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.btnGuardarGastos);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtComprobante);
             this.Controls.Add(this.comboBoxCategoria);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -324,13 +325,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBoxCategoria;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtComprobante;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnGuardarGastos;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxMonto;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
     }
 }

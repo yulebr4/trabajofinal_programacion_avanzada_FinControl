@@ -11,9 +11,11 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         string Categoria { get; set; }
         decimal Monto { get; set; }
         DateTime Fecha { get; set; }
+        string Comprobante { get; set; }
+        int ProyectoId { get; }
 
         event EventHandler GuardarGasto;
         event EventHandler AdjuntarComprobante;
-        void MostrarMensaje(string mensaje);
+       
     }
 }

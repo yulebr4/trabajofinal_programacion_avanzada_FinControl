@@ -10,8 +10,11 @@ namespace trabajofinal_programacion_avanzada_logistica.Models
     {
         public decimal Monto { get; set; }
         public string Categoria { get; set; }
-
         public string Comprobante { get; set; }
+
+        public string Gasto { get; set; }
+
+        public DateTime Fecha { get; set; }
     }
 }
 

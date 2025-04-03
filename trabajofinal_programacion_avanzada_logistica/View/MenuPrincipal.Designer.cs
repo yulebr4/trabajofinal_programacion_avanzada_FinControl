@@ -224,7 +224,7 @@
             // 
             // btnMenuM
             // 
-            this.btnMenuM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMenuM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnMenuM.FlatAppearance.BorderSize = 0;
             this.btnMenuM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuM.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
