@@ -19,7 +19,7 @@ namespace trabajofinal_programacion_avanzada_logistica.Presenter
             // Suscribirse a los eventos de la vista
             this.view.OnGastosClicked += (s, e) => AbrirFormulario(new Gastos());
             this.view.OnSolicitudesClicked += (s, e) => AbrirFormulario(new Solicitudes());
-            this.view.OnReportesClicked += (s, e) => AbrirFormulario(new Reportes());
+            this.view.OnReportesClicked += (s, e) => AbrirFormulario(new btnEnviar());
             this.view.OnExperienciaUsuarioClicked += (s, e) => AbrirFormulario(new ExperienciaUsuario());
             this.view.OnAcercaDeClicked += (s, e) => AbrirFormulario(new AcercaDe());
             this.view.OnLogoutClicked += (s, e) =>

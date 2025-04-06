@@ -45,7 +45,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             presenter = new MenuPrincipalPresenter(this);
         }
 
-        public void ShowForm() => this.Show();
+        public void ShowForm() => this.HideForm();
         public void CloseForm() => this.Close();
         public void HideForm() => this.Hide();
 

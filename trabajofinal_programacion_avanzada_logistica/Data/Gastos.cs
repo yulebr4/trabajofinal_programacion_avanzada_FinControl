@@ -34,5 +34,7 @@ namespace trabajofinal_programacion_avanzada_logistica.Data
         public virtual ICollection<Solicitudes> Solicitudes { get; set; }
         public DateTime Fecha { get; internal set; }
         public string Comprobante { get; internal set; }
+        public string Descripcion { get; internal set; }
+        public string Empleado { get; internal set; }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace trabajofinal_programacion_avanzada_logistica.View
 {
-    public partial class Reportes : Form
+    public partial class btnEnviar : Form
     {
-        public Reportes()
+        public btnEnviar()
         {
             InitializeComponent();
         }

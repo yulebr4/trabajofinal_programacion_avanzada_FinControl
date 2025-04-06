@@ -8,13 +8,13 @@ namespace trabajofinal_programacion_avanzada_logistica.Models
 {
     public class GastosModel
     {
-        public decimal Monto { get; set; }
+        public int Id { get; set; }
         public string Categoria { get; set; }
-        public string Comprobante { get; set; }
-
-        public string Gasto { get; set; }
-
+        public string Descripcion { get; set; }
+        public decimal Monto { get; set; }
         public DateTime Fecha { get; set; }
+        public string ComprobantePath { get; set; }
+        public string Empleado { get; set; }
     }
 }
 

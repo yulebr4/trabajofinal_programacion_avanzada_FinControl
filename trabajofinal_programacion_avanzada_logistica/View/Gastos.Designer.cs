@@ -1,4 +1,7 @@
-﻿namespace trabajofinal_programacion_avanzada_logistica.View
+﻿using System;
+using System.Windows.Forms;
+
+namespace trabajofinal_programacion_avanzada_logistica.View
 {
     partial class Gastos
     {
@@ -42,16 +45,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
-            this.txtComprobante = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewGastos = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.btnGuardarGastos = new System.Windows.Forms.Button();
             this.maskedTextBoxMonto = new System.Windows.Forms.MaskedTextBox();
             this.dateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxEmpleado = new System.Windows.Forms.ComboBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGastos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -165,7 +170,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(241, 89);
+            this.label2.Location = new System.Drawing.Point(241, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 16);
             this.label2.TabIndex = 5;
@@ -174,7 +179,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(241, 133);
+            this.label3.Location = new System.Drawing.Point(241, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 16);
             this.label3.TabIndex = 6;
@@ -183,7 +188,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(241, 184);
+            this.label4.Location = new System.Drawing.Point(241, 168);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 16);
             this.label4.TabIndex = 7;
@@ -192,37 +197,23 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(241, 247);
+            this.label5.Location = new System.Drawing.Point(241, 231);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 16);
+            this.label5.Size = new System.Drawing.Size(73, 16);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Comprobante:";
+            this.label5.Text = "Empleado:";
             // 
             // comboBoxCategoria
             // 
             this.comboBoxCategoria.FormattingEnabled = true;
-            this.comboBoxCategoria.Items.AddRange(new object[] {
-            "Transporte",
-            "Comida",
-            "Material de Papeleria",
-            "Tecnologia",
-            "Proyecto A",
-            "Desarrollo de software"});
-            this.comboBoxCategoria.Location = new System.Drawing.Point(339, 81);
+            this.comboBoxCategoria.Location = new System.Drawing.Point(339, 65);
             this.comboBoxCategoria.Name = "comboBoxCategoria";
             this.comboBoxCategoria.Size = new System.Drawing.Size(200, 24);
             this.comboBoxCategoria.TabIndex = 9;
             // 
-            // txtComprobante
-            // 
-            this.txtComprobante.Location = new System.Drawing.Point(339, 241);
-            this.txtComprobante.Name = "txtComprobante";
-            this.txtComprobante.Size = new System.Drawing.Size(200, 22);
-            this.txtComprobante.TabIndex = 12;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(610, 247);
+            this.button1.Location = new System.Drawing.Point(609, 272);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 13;
@@ -230,17 +221,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // dataGridViewGastos
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.Location = new System.Drawing.Point(228, 377);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(749, 236);
-            this.dataGridView1.TabIndex = 14;
+            this.dataGridViewGastos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewGastos.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridViewGastos.Location = new System.Drawing.Point(228, 377);
+            this.dataGridViewGastos.Name = "dataGridViewGastos";
+            this.dataGridViewGastos.RowHeadersWidth = 51;
+            this.dataGridViewGastos.RowTemplate.Height = 24;
+            this.dataGridViewGastos.Size = new System.Drawing.Size(749, 236);
+            this.dataGridViewGastos.TabIndex = 14;
             // 
             // label6
             // 
@@ -254,17 +245,17 @@
             // 
             // btnGuardarGastos
             // 
-            this.btnGuardarGastos.Location = new System.Drawing.Point(702, 247);
+            this.btnGuardarGastos.Location = new System.Drawing.Point(712, 272);
             this.btnGuardarGastos.Name = "btnGuardarGastos";
             this.btnGuardarGastos.Size = new System.Drawing.Size(75, 23);
             this.btnGuardarGastos.TabIndex = 16;
             this.btnGuardarGastos.Text = "Guardar";
             this.btnGuardarGastos.UseVisualStyleBackColor = true;
-            this.btnGuardarGastos.Click += new System.EventHandler(this.btnGuardarGastos_Click);
+            this.btnGuardarGastos.Click += new System.EventHandler(this.btnGuardarGastos_Click_1);
             // 
             // maskedTextBoxMonto
             // 
-            this.maskedTextBoxMonto.Location = new System.Drawing.Point(339, 127);
+            this.maskedTextBoxMonto.Location = new System.Drawing.Point(339, 111);
             this.maskedTextBoxMonto.Mask = "99999";
             this.maskedTextBoxMonto.Name = "maskedTextBoxMonto";
             this.maskedTextBoxMonto.Size = new System.Drawing.Size(200, 22);
@@ -273,10 +264,46 @@
             // 
             // dateTimePickerFecha
             // 
-            this.dateTimePickerFecha.Location = new System.Drawing.Point(339, 184);
+            this.dateTimePickerFecha.Location = new System.Drawing.Point(339, 168);
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
             this.dateTimePickerFecha.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerFecha.TabIndex = 19;
+            // 
+            // comboBoxEmpleado
+            // 
+            this.comboBoxEmpleado.FormattingEnabled = true;
+            this.comboBoxEmpleado.Items.AddRange(new object[] {
+            "Carmen Rodríguez",
+            " ",
+            "Javier Méndez",
+            "",
+            "Ana María Fernández",
+            "",
+            "Miguel Ángel Pérez",
+            "",
+            "Lucía González",
+            "",
+            "Francisco Morales"});
+            this.comboBoxEmpleado.Location = new System.Drawing.Point(339, 223);
+            this.comboBoxEmpleado.Name = "comboBoxEmpleado";
+            this.comboBoxEmpleado.Size = new System.Drawing.Size(200, 24);
+            this.comboBoxEmpleado.TabIndex = 20;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(339, 269);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(200, 22);
+            this.txtDescripcion.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(241, 275);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 16);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Descripcion:";
             // 
             // Gastos
             // 
@@ -284,13 +311,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1027, 637);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.comboBoxEmpleado);
             this.Controls.Add(this.dateTimePickerFecha);
             this.Controls.Add(this.maskedTextBoxMonto);
             this.Controls.Add(this.btnGuardarGastos);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewGastos);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtComprobante);
             this.Controls.Add(this.comboBoxCategoria);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -305,11 +334,13 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGastos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
+
 
         #endregion
 
@@ -325,13 +356,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBoxCategoria;
-        private System.Windows.Forms.TextBox txtComprobante;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewGastos;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnGuardarGastos;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxMonto;
         private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
+        private readonly EventHandler btnGuardarGastos_Click;
+        private ComboBox comboBoxEmpleado;
+        private TextBox txtDescripcion;
+        private Label label7;
     }
 }

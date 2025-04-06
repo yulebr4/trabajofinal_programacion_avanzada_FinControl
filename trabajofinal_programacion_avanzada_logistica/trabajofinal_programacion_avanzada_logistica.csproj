@@ -39,6 +39,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.5.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
@@ -86,6 +89,9 @@
     </Reference>
     <Reference Include="itext.svg, Version=9.1.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\itext.9.1.0\lib\net461\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="MailKit, Version=4.11.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
       <HintPath>..\packages\MailKit.4.11.0\lib\net48\MailKit.dll</HintPath>
@@ -258,8 +264,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Repository\GastosRepository.cs" />
+    <Compile Include="Repository\IGastosRepository.cs" />
     <Compile Include="Services\CorreoService.cs" />
-    <Compile Include="Services\PdfService.cs" />
+    <Compile Include="Services\IPdfService.cs" />
     <Compile Include="View\AcercaDe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +279,7 @@
     <Compile Include="View\ExperienciaUsuario.Designer.cs">
       <DependentUpon>ExperienciaUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Gasto.cs" />
     <Compile Include="View\Gastos.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -8,59 +8,85 @@ using trabajofinal_programacion_avanzada_logistica.Data;
 using trabajofinal_programacion_avanzada_logistica.Repository;
 using trabajofinal_programacion_avanzada_logistica.Services;
 using trabajofinal_programacion_avanzada_logistica.View;
-using System.IO;
+using trabajofinal_programacion_avanzada_logistica.Models;
+using trabajofinal_programacion_avanzada_logistica.Presenter;
 
 namespace trabajofinal_programacion_avanzada_logistica.Presenter
 {
     public class GastosPresenter
     {
-        private readonly IGastosView view;
-        private readonly FinControlDBEntities db; // Modelo de Entity Framework
+        private readonly IGastosView _view;
+        private readonly IGastosRepository _repository;
+        private readonly IPdfService _pdfService;
 
-        public GastosPresenter(IGastosView view)
+        public GastosPresenter(IGastosView view, IGastosRepository repository, IPdfService pdfService)
         {
-            this.view = view;
-            db = new FinControlDBEntities(); // Inicializa el contexto de la BD
+            _view = view ?? throw new ArgumentNullException(nameof(view));
+            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            _pdfService = pdfService ?? throw new ArgumentNullException(nameof(pdfService));
 
-            this.view.GuardarGasto += OnGuardarGasto;
-            this.view.AdjuntarComprobante += OnAdjuntarComprobante;
+            _view.CargarGastos += OnCargarGastos;
+            _view.GuardarGasto += OnGuardarGasto;
+            _view.GenerarPdf += OnGenerarPdf;
+        }
+
+        private void OnCargarGastos(object sender, EventArgs e)
+        {
+            try
+            {
+                var gastos = _repository.ObtenerGastos();
+                _view.MostrarGastos(gastos);
+            }
+            catch (Exception ex)
+            {
+                _view.MostrarMensaje($"Error al cargar gastos: {ex.Message}", "Error");
+            }
         }
 
         private void OnGuardarGasto(object sender, EventArgs e)
         {
-            var gasto = new Data.Gastos
+            try
             {
-                Categoria = view.Categoria,
-                Monto = view.Monto,
-                Fecha = view.Fecha,
-                Comprobante = view.Comprobante,
-                 ProyectoId = view.ProyectoId
-            };
-
-            db.Gastos.Add(gasto);
-            db.SaveChanges();
-            MessageBox.Show("Gasto registrado con éxito.");
-        }
-
-        private void OnAdjuntarComprobante(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "Archivos PDF (*.pdf)|*.pdf";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                var gasto = new GastosModel
                 {
-                    view.Comprobante = openFileDialog.FileName;
-                }
+                    Categoria = _view.Categoria,
+                    Descripcion = _view.Descripcion,
+                    Monto = _view.Monto,
+                    Fecha = _view.Fecha,
+                    Empleado = _view.Empleado,
+                    ComprobantePath = _view.ComprobantePath
+                };
+
+                _repository.AgregarGasto(gasto);
+                _view.MostrarMensaje("Gasto guardado correctamente", "Éxito");
+                OnCargarGastos(sender, e);
+            }
+            catch (Exception ex)
+            {
+                _view.MostrarMensaje($"Error al guardar gasto: {ex.Message}", "Error");
             }
         }
 
-        private void GenerarInformePdf(Data.Gastos gasto)
+        private void OnGenerarPdf(object sender, EventArgs e)
         {
-            PdfService pdfService = new PdfService();
-            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "InformeGasto.pdf");
+            try
+            {
+                var gasto = new GastosModel
+                {
+                    Categoria = _view.Categoria,
+                    Descripcion = _view.Descripcion,
+                    Monto = _view.Monto,
+                    Fecha = _view.Fecha,
+                    Empleado = _view.Empleado
+                };
 
-            pdfService.GenerarInforme(filePath, gasto.Categoria, gasto.Monto, gasto.Fecha);
-            MessageBox.Show($"Informe generado en: {filePath}");
+                _view.ComprobantePath = _pdfService.GenerarComprobantePdf(gasto);
+                _view.MostrarMensaje($"PDF generado en: {_view.ComprobantePath}", "Éxito");
+            }
+            catch (Exception ex)
+            {
+                _view.MostrarMensaje($"Error al generar PDF: {ex.Message}", "Error");
+            }
         }
     }
 }
