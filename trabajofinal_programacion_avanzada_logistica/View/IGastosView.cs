@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using trabajofinal_programacion_avanzada_logistica.Data;
-using trabajofinal_programacion_avanzada_logistica.Models;
+using trabajofinal_programacion_avanzada_logistica.Model;
 
 namespace trabajofinal_programacion_avanzada_logistica.View
 {
@@ -23,5 +23,8 @@ namespace trabajofinal_programacion_avanzada_logistica.View
 
         void MostrarGastos(List<GastosModel> gastos);
         void MostrarMensaje(string mensaje, string titulo);
+        void LimpiarFormulario();
+        bool ValidarCamposParaPDF();
+        void MostrarErrorGeneracionPDF(string mensaje);
     }
 }

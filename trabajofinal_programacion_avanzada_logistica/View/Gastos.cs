@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using trabajofinal_programacion_avanzada_logistica.Data;
-using trabajofinal_programacion_avanzada_logistica.Models;
+using trabajofinal_programacion_avanzada_logistica.Model;
 using trabajofinal_programacion_avanzada_logistica.Presenter;
 using trabajofinal_programacion_avanzada_logistica.Repository;
 using trabajofinal_programacion_avanzada_logistica.Services;
@@ -102,8 +102,20 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             if (ValidateInputs())
             {
                 GuardarGasto?.Invoke(this, EventArgs.Empty);
+                
             }
         }
+
+        public void LimpiarFormulario()
+        {
+            comboBoxCategoria.SelectedIndex = -1;
+            maskedTextBoxMonto.Clear();
+            txtDescripcion.Clear();
+            dateTimePickerFecha.Value = DateTime.Today;
+            comboBoxEmpleado.SelectedIndex = -1;
+            comboBoxCategoria.Focus();
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -149,6 +161,39 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         private void label1_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+    
+
+    public bool ValidarCamposParaPDF()
+        {
+            if (string.IsNullOrEmpty(comboBoxCategoria.Text))
+            {
+                MostrarErrorGeneracionPDF("Seleccione una categoría");
+                comboBoxCategoria.Focus();
+                return false;
+            }
+
+            if (!decimal.TryParse(maskedTextBoxMonto.Text, out decimal monto) || monto <= 0)
+            {
+                MostrarErrorGeneracionPDF("Ingrese un monto válido");
+                maskedTextBoxMonto.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(txtDescripcion.Text))
+            {
+                MostrarErrorGeneracionPDF("Ingrese una descripción");
+                txtDescripcion.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        public void MostrarErrorGeneracionPDF(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Error al generar PDF",
+                          MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 

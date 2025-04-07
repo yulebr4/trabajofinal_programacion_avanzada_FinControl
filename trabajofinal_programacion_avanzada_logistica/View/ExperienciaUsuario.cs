@@ -7,34 +7,56 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using trabajofinal_programacion_avanzada_logistica.Models;
 using trabajofinal_programacion_avanzada_logistica.Presenter;
 
 namespace trabajofinal_programacion_avanzada_logistica.View
 {
     public partial class ExperienciaUsuario : Form, IExperienciaUsuario
     {
-        
-        public event EventHandler OnEnviarClicked;
+
+        private readonly ExperienciaUsuarioPresenter _presenter;
 
         public ExperienciaUsuario()
         {
             InitializeComponent();
-           
+            // Configuración del servicio de email
+            var emailConfig = new EmailConfig
+            {
+                Username = "fincontrol521@gmail.com",
+                Password = "ixfq rozy dkxx lway",
+                FromEmail = "fincontrol521@gmail.com",
+                ToEmail = "fincontrol521@gmail.com",
+                SmtpServer = "smtp.gmail.com",
+                SmtpPort = 587
+            };
 
+            _presenter = new ExperienciaUsuarioPresenter(this, emailConfig);
+      
         }
 
-        public string Satisfaccion => groupBoxSatisfaccion.Controls
-            .OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text ?? "No especificado";
+        public ExperienciaUsuarioModel ObtenerExperiencia()
+        {
+            string satisfaccion = groupBoxSatisfaccion.Controls.OfType<RadioButton>()
+                .FirstOrDefault(r => r.Checked)?.Text ?? "No especificado";
 
-        public string Comentarios => richTextBoxComentarios.Text;
+            List<string> areas = groupBoxMejoras.Controls.OfType<RadioButton>()
+                .Where(c => c.Checked).Select(c => c.Text).ToList();
 
-        public List<string> AreasMejora => groupBoxMejoras.Controls
-            .OfType<CheckBox>().Where(c => c.Checked).Select(c => c.Text).ToList();
-
+            return new ExperienciaUsuarioModel
+            {
+                Satisfaccion = satisfaccion,
+                Comentarios = richTextBoxComentarios.Text,
+                AreasMejora = areas
+            };
+        }
         public void MostrarMensaje(string mensaje)
         {
-            MessageBox.Show(mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(mensaje);
         }
+    
+
+
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -58,10 +80,10 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             this.Close();
         }
 
-        private void btnEnviar_Click_1(object sender, EventArgs e)
+        private async void btnEnviar_Click_1(object sender, EventArgs e)
         {
-            OnEnviarClicked?.Invoke(this, EventArgs.Empty);
-            MostrarMensaje("Gracias por su opinión");
+            _presenter.EnviarExperiencia();
+
         }
 
 

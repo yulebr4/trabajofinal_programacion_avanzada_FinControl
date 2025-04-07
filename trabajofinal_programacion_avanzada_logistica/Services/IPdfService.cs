@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using trabajofinal_programacion_avanzada_logistica.Models;
+using trabajofinal_programacion_avanzada_logistica.Model;
 using System.Windows.Forms;
 
 

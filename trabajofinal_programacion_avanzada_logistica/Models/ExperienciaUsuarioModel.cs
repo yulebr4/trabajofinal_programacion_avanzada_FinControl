@@ -11,5 +11,7 @@ namespace trabajofinal_programacion_avanzada_logistica.Models
         public string Satisfaccion { get; set; }
         public string Comentarios { get; set; }
         public List<string> AreasMejora { get; set; }
+
+        public string Calificacion => Satisfaccion;
     }
 }

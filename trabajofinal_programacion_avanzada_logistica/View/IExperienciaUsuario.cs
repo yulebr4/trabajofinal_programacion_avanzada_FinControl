@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using trabajofinal_programacion_avanzada_logistica.Models;
 
 namespace trabajofinal_programacion_avanzada_logistica.View
 {
     public interface IExperienciaUsuario
     {
-        event EventHandler OnEnviarClicked;
-        string Satisfaccion { get; }
-        string Comentarios { get; }
-        List<string> AreasMejora { get; }
-
+        ExperienciaUsuarioModel ObtenerExperiencia();
         void MostrarMensaje(string mensaje);
+
     }
 }

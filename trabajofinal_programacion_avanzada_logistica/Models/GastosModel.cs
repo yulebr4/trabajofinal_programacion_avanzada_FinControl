@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace trabajofinal_programacion_avanzada_logistica.Models
+namespace trabajofinal_programacion_avanzada_logistica.Model
 {
     public class GastosModel
     {

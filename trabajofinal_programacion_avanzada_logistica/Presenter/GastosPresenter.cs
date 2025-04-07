@@ -8,7 +8,7 @@ using trabajofinal_programacion_avanzada_logistica.Data;
 using trabajofinal_programacion_avanzada_logistica.Repository;
 using trabajofinal_programacion_avanzada_logistica.Services;
 using trabajofinal_programacion_avanzada_logistica.View;
-using trabajofinal_programacion_avanzada_logistica.Models;
+using trabajofinal_programacion_avanzada_logistica.Model;
 using trabajofinal_programacion_avanzada_logistica.Presenter;
 
 namespace trabajofinal_programacion_avanzada_logistica.Presenter
@@ -58,6 +58,7 @@ namespace trabajofinal_programacion_avanzada_logistica.Presenter
                 };
 
                 _repository.AgregarGasto(gasto);
+                _view.LimpiarFormulario();
                 _view.MostrarMensaje("Gasto guardado correctamente", "Éxito");
                 OnCargarGastos(sender, e);
             }
@@ -71,6 +72,13 @@ namespace trabajofinal_programacion_avanzada_logistica.Presenter
         {
             try
             {
+                // Validación centralizada
+                var errorValidacion = ValidarDatosParaPDF();
+                if (!string.IsNullOrEmpty(errorValidacion))
+                {
+                    _view.MostrarMensaje(errorValidacion, "Error");
+                    return;
+                }
                 var gasto = new GastosModel
                 {
                     Categoria = _view.Categoria,
@@ -87,6 +95,20 @@ namespace trabajofinal_programacion_avanzada_logistica.Presenter
             {
                 _view.MostrarMensaje($"Error al generar PDF: {ex.Message}", "Error");
             }
+        }
+
+        private string ValidarDatosParaPDF()
+        {
+            if (string.IsNullOrEmpty(_view.Categoria))
+                return "Seleccione una categoría";
+
+            if (_view.Monto <= 0)
+                return "Ingrese un monto válido";
+
+            if (string.IsNullOrEmpty(_view.Descripcion))
+                return "Ingrese una descripción";
+
+            return string.Empty;
         }
     }
 }

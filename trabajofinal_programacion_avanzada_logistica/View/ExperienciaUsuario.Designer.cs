@@ -287,7 +287,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             this.groupBoxMejoras.Controls.Add(this.radioButton8);
             this.groupBoxMejoras.Controls.Add(this.radioButton7);
             this.groupBoxMejoras.Controls.Add(this.radioButton6);
-            this.groupBoxMejoras.Location = new System.Drawing.Point(225, 494);
+            this.groupBoxMejoras.Location = new System.Drawing.Point(225, 484);
             this.groupBoxMejoras.Name = "groupBoxMejoras";
             this.groupBoxMejoras.Size = new System.Drawing.Size(464, 84);
             this.groupBoxMejoras.TabIndex = 22;
@@ -296,7 +296,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             // radioButton9
             // 
             this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(190, 56);
+            this.radioButton9.Location = new System.Drawing.Point(189, 47);
             this.radioButton9.Name = "radioButton9";
             this.radioButton9.Size = new System.Drawing.Size(104, 20);
             this.radioButton9.TabIndex = 3;
@@ -307,7 +307,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             // radioButton8
             // 
             this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(190, 30);
+            this.radioButton8.Location = new System.Drawing.Point(190, 21);
             this.radioButton8.Name = "radioButton8";
             this.radioButton8.Size = new System.Drawing.Size(84, 20);
             this.radioButton8.TabIndex = 2;
@@ -318,7 +318,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             // radioButton7
             // 
             this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(6, 56);
+            this.radioButton7.Location = new System.Drawing.Point(6, 47);
             this.radioButton7.Name = "radioButton7";
             this.radioButton7.Size = new System.Drawing.Size(128, 20);
             this.radioButton7.TabIndex = 1;
@@ -329,7 +329,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             // radioButton6
             // 
             this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(6, 30);
+            this.radioButton6.Location = new System.Drawing.Point(6, 21);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(139, 20);
             this.radioButton6.TabIndex = 0;
