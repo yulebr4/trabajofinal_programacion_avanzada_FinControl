@@ -52,6 +52,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         private void iconButton1_Click(object sender, EventArgs e)
         {
             OnGastosClicked?.Invoke(this, EventArgs.Empty);
+            
       
         }
 
@@ -71,9 +72,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         private void btnExpeUsuario_Click(object sender, EventArgs e)
         {
             OnExperienciaUsuarioClicked?.Invoke(this, EventArgs.Empty);
-            var vistaExperiencia = new ExperienciaUsuario();
-            var presentador = new ExperienciaUsuarioPresenter(vistaExperiencia); // Conectamos la vista con el Presentador
-            vistaExperiencia.ShowDialog();
+          
         }
 
         

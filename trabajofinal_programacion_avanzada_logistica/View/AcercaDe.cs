@@ -38,8 +38,10 @@ namespace trabajofinal_programacion_avanzada_logistica.View
 
         private void btnMenuPrincipal_Click(object sender, EventArgs e)
         {
-            
+
             // Cerrar el formulario actual (Registro de Gastos)
+            var menuPrincipal = new MenuPrincipal();
+            menuPrincipal.Show();
             this.Close();
         }
     }

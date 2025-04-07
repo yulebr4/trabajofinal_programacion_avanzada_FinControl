@@ -25,9 +25,11 @@ namespace trabajofinal_programacion_avanzada_logistica.Repository
                 Categoria = model.Categoria,
                 Descripcion = model.Descripcion,
                 Monto = model.Monto,
-                Fecha = model.Fecha,
+                FechaRegistro = model.Fecha,
                 Comprobante = model.ComprobantePath,
-                Empleado = model.Empleado
+                Empleado = model.Empleado,
+                ProyectoId = 1,
+                UsuarioId = 1,
             };
 
             _context.Gastos.Add(entity);
@@ -43,7 +45,7 @@ namespace trabajofinal_programacion_avanzada_logistica.Repository
                     Categoria = x.Categoria,
                     Descripcion = x.Descripcion,
                     Monto = x.Monto,
-                    Fecha = x.Fecha,
+                    Fecha = (DateTime)x.FechaRegistro,
                     ComprobantePath = x.Comprobante,
                     Empleado = x.Empleado
                 })

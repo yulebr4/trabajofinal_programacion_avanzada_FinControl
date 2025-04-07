@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FinControlDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FinControlDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Gastos">
           <Key>
             <PropertyRef Name="Id" />
@@ -16,6 +16,9 @@
           <Property Name="Categoria" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Estado" Type="nvarchar" MaxLength="50" />
           <Property Name="FechaRegistro" Type="datetime" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="255" />
+          <Property Name="Comprobante" Type="nvarchar" MaxLength="255" />
+          <Property Name="Empleado" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Proyectos">
           <Key>
@@ -142,8 +145,7 @@
             <End Role="Solicitudes" EntitySet="Solicitudes" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FinControlDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -161,6 +163,9 @@
           <NavigationProperty Name="Proyectos" Relationship="Self.FK_Gastos_Proyectos" FromRole="Gastos" ToRole="Proyectos" />
           <NavigationProperty Name="Usuarios" Relationship="Self.FK_Gastos_Usuarios" FromRole="Gastos" ToRole="Usuarios" />
           <NavigationProperty Name="Solicitudes" Relationship="Self.FK_Solicitudes_Gastos" FromRole="Gastos" ToRole="Solicitudes" />
+          <Property Name="Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Comprobante" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Empleado" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Proyectos">
           <Key>
@@ -303,6 +308,9 @@
           <EntitySetMapping Name="Gastos">
             <EntityTypeMapping TypeName="FinControlDBModel.Gastos">
               <MappingFragment StoreEntitySet="Gastos">
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="Comprobante" ColumnName="Comprobante" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ProyectoId" ColumnName="ProyectoId" />
                 <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
