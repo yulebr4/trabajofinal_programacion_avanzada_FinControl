@@ -15,10 +15,19 @@ namespace trabajofinal_programacion_avanzada_logistica.Data
     public partial class Solicitudes
     {
         public int Id { get; set; }
-        public int UsuarioId { get; set; }
-        public int GastoId { get; set; }
         public string Estado { get; set; }
         public Nullable<System.DateTime> FechaSolicitud { get; set; }
+        public int EmpleadoId { get; set; }
+        public string EmpleadoNombre { get; set; }
+        public int CategoriaId { get; set; }
+        public string Descripcion { get; set; }
+        public decimal Monto { get; set; }
+        public Nullable<System.DateTime> FechaCreacion { get; set; }
+        public string Empleado { get; set; }
+        public string Categoria { get; set; }
+        public Nullable<System.DateTime> Fecha { get; set; }
+        public int UsuarioId { get; set; }
+        public int GastoId { get; set; }
     
         public virtual Gastos Gastos { get; set; }
         public virtual Usuarios Usuarios { get; set; }

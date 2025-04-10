@@ -16,6 +16,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
     public partial class MenuPrincipal : Form, IMenuPrincipalView
     {
 
+
         private MenuPrincipalPresenter presenter;
 
         public event EventHandler OnGastosClicked;

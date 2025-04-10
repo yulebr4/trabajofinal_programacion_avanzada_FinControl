@@ -8,14 +8,14 @@
         <EntityTypeShape EntityType="FinControlDBModel.Gastos" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="FinControlDBModel.Proyectos" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="FinControlDBModel.Reportes" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FinControlDBModel.Solicitudes" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FinControlDBModel.Usuarios" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
         <AssociationConnector Association="FinControlDBModel.FK_Gastos_Proyectos" ManuallyRouted="false" />
         <AssociationConnector Association="FinControlDBModel.FK_Gastos_Usuarios" ManuallyRouted="false" />
-        <AssociationConnector Association="FinControlDBModel.FK_Solicitudes_Gastos" ManuallyRouted="false" />
         <AssociationConnector Association="FinControlDBModel.FK_Reportes_Usuarios" ManuallyRouted="false" />
-        <AssociationConnector Association="FinControlDBModel.FK_Solicitudes_Usuarios" ManuallyRouted="false" />
-      </Diagram>
+        <EntityTypeShape EntityType="FinControlDBModel.Solicitudes" Width="2.375" PointX="5.25" PointY="2.25" />
+        <AssociationConnector Association="FinControlDBModel.FK_Solicitudes_Gastos" />
+        <AssociationConnector Association="FinControlDBModel.FK_Solicitudes_Usuarios" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

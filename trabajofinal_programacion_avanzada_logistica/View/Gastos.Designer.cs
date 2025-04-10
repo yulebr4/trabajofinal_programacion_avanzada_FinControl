@@ -274,15 +274,10 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             this.comboBoxEmpleado.FormattingEnabled = true;
             this.comboBoxEmpleado.Items.AddRange(new object[] {
             "Carmen Rodríguez",
-            " ",
             "Javier Méndez",
-            "",
             "Ana María Fernández",
-            "",
             "Miguel Ángel Pérez",
-            "",
             "Lucía González",
-            "",
             "Francisco Morales"});
             this.comboBoxEmpleado.Location = new System.Drawing.Point(339, 223);
             this.comboBoxEmpleado.Name = "comboBoxEmpleado";

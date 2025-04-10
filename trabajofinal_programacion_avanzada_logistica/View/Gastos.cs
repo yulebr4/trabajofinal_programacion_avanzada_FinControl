@@ -54,10 +54,14 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         private void LoadCategories()
         {
             comboBoxCategoria.Items.AddRange(new object[] {
-                "Alimentación",
-                "Transporte",
-                "Hospedaje",
-                "Materiales",
+                "Gastos operativos",
+                "Gastos de infraestructura",
+                "Gastos de tecnología",
+                "Gastos de marketing",
+                "Gastos administrativos",
+                "Gastos de alimentación",
+                "Gastos de entretenimiento",
+                "Gastos de transporte",
                 "Otros"
             });
         }

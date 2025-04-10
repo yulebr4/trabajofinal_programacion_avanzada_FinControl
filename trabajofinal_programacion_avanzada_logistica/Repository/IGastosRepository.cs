@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using trabajofinal_programacion_avanzada_logistica.Data;
 using trabajofinal_programacion_avanzada_logistica.Model;
+using trabajofinal_programacion_avanzada_logistica.Models;
 
 namespace trabajofinal_programacion_avanzada_logistica.Repository
 {

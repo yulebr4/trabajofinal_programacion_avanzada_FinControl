@@ -44,10 +44,19 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UsuarioId" Type="int" Nullable="false" />
-          <Property Name="GastoId" Type="int" Nullable="false" />
           <Property Name="Estado" Type="nvarchar" MaxLength="50" />
           <Property Name="FechaSolicitud" Type="datetime" />
+          <Property Name="EmpleadoId" Type="int" Nullable="false" />
+          <Property Name="EmpleadoNombre" Type="nvarchar" MaxLength="100" />
+          <Property Name="CategoriaId" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Monto" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" />
+          <Property Name="Empleado" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Categoria" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="GastoId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -162,10 +171,10 @@
           <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Proyectos" Relationship="Self.FK_Gastos_Proyectos" FromRole="Gastos" ToRole="Proyectos" />
           <NavigationProperty Name="Usuarios" Relationship="Self.FK_Gastos_Usuarios" FromRole="Gastos" ToRole="Usuarios" />
-          <NavigationProperty Name="Solicitudes" Relationship="Self.FK_Solicitudes_Gastos" FromRole="Gastos" ToRole="Solicitudes" />
           <Property Name="Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Comprobante" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Empleado" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Solicitudes" Relationship="FinControlDBModel.FK_Solicitudes_Gastos" FromRole="Gastos" ToRole="Solicitudes" />
         </EntityType>
         <EntityType Name="Proyectos">
           <Key>
@@ -188,18 +197,6 @@
           <Property Name="FechaGeneracion" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Usuarios" Relationship="Self.FK_Reportes_Usuarios" FromRole="Reportes" ToRole="Usuarios" />
         </EntityType>
-        <EntityType Name="Solicitudes">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
-          <Property Name="GastoId" Type="Int32" Nullable="false" />
-          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FechaSolicitud" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Gastos" Relationship="Self.FK_Solicitudes_Gastos" FromRole="Solicitudes" ToRole="Gastos" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Solicitudes_Usuarios" FromRole="Solicitudes" ToRole="Usuarios" />
-        </EntityType>
         <EntityType Name="Usuarios">
           <Key>
             <PropertyRef Name="Id" />
@@ -210,8 +207,8 @@
           <Property Name="Contraseña" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Gastos" Relationship="Self.FK_Gastos_Usuarios" FromRole="Usuarios" ToRole="Gastos" />
           <NavigationProperty Name="Reportes" Relationship="Self.FK_Reportes_Usuarios" FromRole="Usuarios" ToRole="Reportes" />
-          <NavigationProperty Name="Solicitudes" Relationship="Self.FK_Solicitudes_Usuarios" FromRole="Usuarios" ToRole="Solicitudes" />
-        </EntityType>
+          <NavigationProperty Name="Solicitudes" Relationship="FinControlDBModel.FK_Solicitudes_Usuarios" FromRole="Usuarios" ToRole="Solicitudes" />
+          </EntityType>
         <Association Name="FK_Gastos_Proyectos">
           <End Role="Proyectos" Type="Self.Proyectos" Multiplicity="1" />
           <End Role="Gastos" Type="Self.Gastos" Multiplicity="*" />
@@ -236,18 +233,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Solicitudes_Gastos">
-          <End Role="Gastos" Type="Self.Gastos" Multiplicity="1" />
-          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Gastos">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Solicitudes">
-              <PropertyRef Name="GastoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Reportes_Usuarios">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
           <End Role="Reportes" Type="Self.Reportes" Multiplicity="*" />
@@ -260,23 +245,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Solicitudes_Usuarios">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
-          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuarios">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Solicitudes">
-              <PropertyRef Name="UsuarioId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="FinControlDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Gastos" EntityType="Self.Gastos" />
           <EntitySet Name="Proyectos" EntityType="Self.Proyectos" />
           <EntitySet Name="Reportes" EntityType="Self.Reportes" />
-          <EntitySet Name="Solicitudes" EntityType="Self.Solicitudes" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
           <AssociationSet Name="FK_Gastos_Proyectos" Association="Self.FK_Gastos_Proyectos">
             <End Role="Proyectos" EntitySet="Proyectos" />
@@ -286,20 +258,66 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Gastos" EntitySet="Gastos" />
           </AssociationSet>
-          <AssociationSet Name="FK_Solicitudes_Gastos" Association="Self.FK_Solicitudes_Gastos">
-            <End Role="Gastos" EntitySet="Gastos" />
-            <End Role="Solicitudes" EntitySet="Solicitudes" />
-          </AssociationSet>
           <AssociationSet Name="FK_Reportes_Usuarios" Association="Self.FK_Reportes_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Reportes" EntitySet="Reportes" />
           </AssociationSet>
-          <AssociationSet Name="FK_Solicitudes_Usuarios" Association="Self.FK_Solicitudes_Usuarios">
+          <EntitySet Name="Solicitudes" EntityType="FinControlDBModel.Solicitudes" />
+          <AssociationSet Name="FK_Solicitudes_Gastos" Association="FinControlDBModel.FK_Solicitudes_Gastos">
+            <End Role="Gastos" EntitySet="Gastos" />
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Solicitudes_Usuarios" Association="FinControlDBModel.FK_Solicitudes_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Solicitudes" EntitySet="Solicitudes" />
           </AssociationSet>
-        </EntityContainer>
-      </Schema>
+          </EntityContainer>
+        <EntityType Name="Solicitudes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FechaSolicitud" Type="DateTime" Precision="3" />
+          <Property Name="EmpleadoId" Type="Int32" Nullable="false" />
+          <Property Name="EmpleadoNombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CategoriaId" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Monto" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="Empleado" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Categoria" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="GastoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Gastos" Relationship="FinControlDBModel.FK_Solicitudes_Gastos" FromRole="Solicitudes" ToRole="Gastos" />
+          <NavigationProperty Name="Usuarios" Relationship="FinControlDBModel.FK_Solicitudes_Usuarios" FromRole="Solicitudes" ToRole="Usuarios" />
+        </EntityType>
+        <Association Name="FK_Solicitudes_Gastos">
+          <End Type="FinControlDBModel.Gastos" Role="Gastos" Multiplicity="1" />
+          <End Type="FinControlDBModel.Solicitudes" Role="Solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gastos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Solicitudes">
+              <PropertyRef Name="GastoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Solicitudes_Usuarios">
+          <End Type="FinControlDBModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="FinControlDBModel.Solicitudes" Role="Solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Solicitudes">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -342,17 +360,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Solicitudes">
-            <EntityTypeMapping TypeName="FinControlDBModel.Solicitudes">
-              <MappingFragment StoreEntitySet="Solicitudes">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
-                <ScalarProperty Name="GastoId" ColumnName="GastoId" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="FechaSolicitud" ColumnName="FechaSolicitud" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Usuarios">
             <EntityTypeMapping TypeName="FinControlDBModel.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
@@ -360,6 +367,26 @@
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Correo" ColumnName="Correo" />
                 <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Solicitudes">
+            <EntityTypeMapping TypeName="FinControlDBModel.Solicitudes">
+              <MappingFragment StoreEntitySet="Solicitudes">
+                <ScalarProperty Name="GastoId" ColumnName="GastoId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
+                <ScalarProperty Name="EmpleadoNombre" ColumnName="EmpleadoNombre" />
+                <ScalarProperty Name="EmpleadoId" ColumnName="EmpleadoId" />
+                <ScalarProperty Name="FechaSolicitud" ColumnName="FechaSolicitud" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

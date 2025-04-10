@@ -28,7 +28,7 @@ namespace trabajofinal_programacion_avanzada_logistica.Data
         public DbSet<Gastos> Gastos { get; set; }
         public DbSet<Proyectos> Proyectos { get; set; }
         public DbSet<Reportes> Reportes { get; set; }
-        public DbSet<Solicitudes> Solicitudes { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
+        public DbSet<Solicitudes> Solicitudes { get; set; }
     }
 }

@@ -3,20 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using trabajofinal_programacion_avanzada_logistica.View;
 using trabajofinal_programacion_avanzada_logistica.Models;
-
 
 namespace trabajofinal_programacion_avanzada_logistica.Services
 {
-    public interface ICorreoService
+    public interface ISolicitudService
     {
-        Task EnviarCorreoAsync(ExperienciaUsuarioModel experiencia);
-        Task EnviarReporteReembolso(SolicitudModel solicitud);
-
-
-
+        IEnumerable<SolicitudModel> ObtenerTodas();
+        void GuardarSolicitud(SolicitudModel solicitud);
+        string DeterminarEstado(decimal monto);
     }
-
 }
-

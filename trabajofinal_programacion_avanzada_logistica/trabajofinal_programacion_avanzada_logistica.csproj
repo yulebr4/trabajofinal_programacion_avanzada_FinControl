@@ -377,10 +377,12 @@
     <Compile Include="Models\EmailConfig.cs" />
     <Compile Include="Models\ExperienciaUsuarioModel.cs" />
     <Compile Include="Models\GastosModel.cs" />
+    <Compile Include="Models\SolicitudModel.cs" />
     <Compile Include="Presenter\ExperienciaUsuarioPresenter.cs" />
     <Compile Include="Presenter\GastosPresenter.cs" />
     <Compile Include="Presenter\LoginPresenter.cs" />
     <Compile Include="Presenter\MenuPrincipalPresenter.cs" />
+    <Compile Include="Presenter\SolicitudesPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -393,6 +395,8 @@
     <Compile Include="Services\CorreoService.cs" />
     <Compile Include="Services\ICorreoService.cs" />
     <Compile Include="Services\IPdfService.cs" />
+    <Compile Include="Services\ISolicitudService.cs" />
+    <Compile Include="Services\SolicitudService.cs" />
     <Compile Include="View\AcercaDe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,7 +409,6 @@
     <Compile Include="View\ExperienciaUsuario.Designer.cs">
       <DependentUpon>ExperienciaUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Gasto.cs" />
     <Compile Include="View\Gastos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -416,6 +419,7 @@
     <Compile Include="View\IGastosView.cs" />
     <Compile Include="View\ILoginView.cs" />
     <Compile Include="View\IMenuPrincipalView.cs" />
+    <Compile Include="View\ISolicitudView.cs" />
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
