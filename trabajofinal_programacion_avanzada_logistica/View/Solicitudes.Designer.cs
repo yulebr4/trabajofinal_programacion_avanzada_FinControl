@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Solicitudes));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnMenuPrincipal = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,14 +59,15 @@
             this.lblRechazadasPrincipal = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResumen)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.guna2CustomGradientPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,6 +81,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(198, 637);
             this.panel1.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-18, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(216, 407);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -178,7 +190,7 @@
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(762, 363);
+            this.btnEnviar.Location = new System.Drawing.Point(450, 521);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(75, 23);
             this.btnEnviar.TabIndex = 14;
@@ -189,47 +201,56 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(576, 274);
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(689, 217);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 16);
+            this.label2.Size = new System.Drawing.Size(171, 31);
             this.label2.TabIndex = 6;
             this.label2.Text = "Monto:";
             // 
             // txtMonto2
             // 
-            this.txtMonto2.Location = new System.Drawing.Point(707, 271);
+            this.txtMonto2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMonto2.Location = new System.Drawing.Point(879, 220);
             this.txtMonto2.Name = "txtMonto2";
-            this.txtMonto2.Size = new System.Drawing.Size(153, 22);
+            this.txtMonto2.Size = new System.Drawing.Size(125, 22);
             this.txtMonto2.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(226, 217);
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(222, 217);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 16);
+            this.label3.Size = new System.Drawing.Size(207, 31);
             this.label3.TabIndex = 7;
             this.label3.Text = "Empleado:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(226, 279);
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(222, 257);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 16);
+            this.label5.Size = new System.Drawing.Size(207, 38);
             this.label5.TabIndex = 15;
             this.label5.Text = "Categoria:";
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(324, 271);
+            this.cmbCategoria.Location = new System.Drawing.Point(450, 260);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(153, 24);
+            this.cmbCategoria.Size = new System.Drawing.Size(224, 24);
             this.cmbCategoria.TabIndex = 16;
             // 
             // cmbEmpleado
             // 
+            this.cmbEmpleado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbEmpleado.FormattingEnabled = true;
             this.cmbEmpleado.Items.AddRange(new object[] {
             "Carmen Rodríguez",
@@ -238,18 +259,19 @@
             "Miguel Ángel Pérez",
             "Lucía González",
             "Francisco Morales"});
-            this.cmbEmpleado.Location = new System.Drawing.Point(324, 209);
+            this.cmbEmpleado.Location = new System.Drawing.Point(450, 220);
             this.cmbEmpleado.Name = "cmbEmpleado";
-            this.cmbEmpleado.Size = new System.Drawing.Size(153, 24);
+            this.cmbEmpleado.Size = new System.Drawing.Size(224, 24);
             this.cmbEmpleado.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(225, 363);
+            this.label4.Location = new System.Drawing.Point(450, 303);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(199, 23);
+            this.label4.Size = new System.Drawing.Size(224, 22);
             this.label4.TabIndex = 12;
             this.label4.Text = "Resumen de Solicitudes";
             // 
@@ -257,16 +279,17 @@
             // 
             this.dgvResumen.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvResumen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResumen.Location = new System.Drawing.Point(219, 407);
+            this.dgvResumen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvResumen.Location = new System.Drawing.Point(450, 336);
             this.dgvResumen.Name = "dgvResumen";
             this.dgvResumen.RowHeadersWidth = 51;
             this.dgvResumen.RowTemplate.Height = 24;
-            this.dgvResumen.Size = new System.Drawing.Size(708, 197);
+            this.dgvResumen.Size = new System.Drawing.Size(224, 171);
             this.dgvResumen.TabIndex = 13;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(852, 363);
+            this.btnGuardar.Location = new System.Drawing.Point(450, 553);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 11;
@@ -278,19 +301,20 @@
             // 
             this.guna2CustomGradientPanel1.Controls.Add(this.lblPendientes);
             this.guna2CustomGradientPanel1.Controls.Add(this.lblPendientesPrincipal);
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(219, 58);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(222, 73);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(223, 109);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(207, 109);
             this.guna2CustomGradientPanel1.TabIndex = 17;
             // 
             // lblPendientes
             // 
             this.lblPendientes.AutoSize = true;
             this.lblPendientes.BackColor = System.Drawing.Color.Transparent;
+            this.lblPendientes.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPendientes.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.lblPendientes.Location = new System.Drawing.Point(7, 46);
             this.lblPendientes.Name = "lblPendientes";
-            this.lblPendientes.Size = new System.Drawing.Size(14, 16);
+            this.lblPendientes.Size = new System.Drawing.Size(16, 20);
             this.lblPendientes.TabIndex = 1;
             this.lblPendientes.Text = "0";
             // 
@@ -298,9 +322,10 @@
             // 
             this.lblPendientesPrincipal.AutoSize = true;
             this.lblPendientesPrincipal.BackColor = System.Drawing.Color.Transparent;
-            this.lblPendientesPrincipal.Location = new System.Drawing.Point(7, 13);
+            this.lblPendientesPrincipal.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPendientesPrincipal.Location = new System.Drawing.Point(0, 13);
             this.lblPendientesPrincipal.Name = "lblPendientesPrincipal";
-            this.lblPendientesPrincipal.Size = new System.Drawing.Size(144, 16);
+            this.lblPendientesPrincipal.Size = new System.Drawing.Size(149, 20);
             this.lblPendientesPrincipal.TabIndex = 0;
             this.lblPendientesPrincipal.Text = "Solicitudes Pendientes";
             // 
@@ -308,7 +333,7 @@
             // 
             this.guna2CustomGradientPanel2.Controls.Add(this.lblAprobado);
             this.guna2CustomGradientPanel2.Controls.Add(this.lblMontoTotalPrincipal);
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(498, 58);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(450, 73);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(223, 109);
             this.guna2CustomGradientPanel2.TabIndex = 18;
@@ -317,10 +342,11 @@
             // 
             this.lblAprobado.AutoSize = true;
             this.lblAprobado.BackColor = System.Drawing.Color.Transparent;
+            this.lblAprobado.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAprobado.ForeColor = System.Drawing.Color.Green;
             this.lblAprobado.Location = new System.Drawing.Point(12, 46);
             this.lblAprobado.Name = "lblAprobado";
-            this.lblAprobado.Size = new System.Drawing.Size(21, 16);
+            this.lblAprobado.Size = new System.Drawing.Size(23, 20);
             this.lblAprobado.TabIndex = 2;
             this.lblAprobado.Text = "$0";
             // 
@@ -328,29 +354,32 @@
             // 
             this.lblMontoTotalPrincipal.AutoSize = true;
             this.lblMontoTotalPrincipal.BackColor = System.Drawing.Color.Transparent;
-            this.lblMontoTotalPrincipal.Location = new System.Drawing.Point(12, 13);
+            this.lblMontoTotalPrincipal.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMontoTotalPrincipal.Location = new System.Drawing.Point(3, 13);
             this.lblMontoTotalPrincipal.Name = "lblMontoTotalPrincipal";
-            this.lblMontoTotalPrincipal.Size = new System.Drawing.Size(142, 16);
+            this.lblMontoTotalPrincipal.Size = new System.Drawing.Size(146, 20);
             this.lblMontoTotalPrincipal.TabIndex = 1;
             this.lblMontoTotalPrincipal.Text = "Monto Total Aprobado";
+            this.lblMontoTotalPrincipal.Click += new System.EventHandler(this.lblMontoTotalPrincipal_Click);
             // 
             // guna2CustomGradientPanel3
             // 
             this.guna2CustomGradientPanel3.Controls.Add(this.lblRechazadas);
             this.guna2CustomGradientPanel3.Controls.Add(this.lblRechazadasPrincipal);
-            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(776, 58);
+            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(689, 73);
             this.guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
-            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(223, 109);
+            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(171, 109);
             this.guna2CustomGradientPanel3.TabIndex = 19;
             // 
             // lblRechazadas
             // 
             this.lblRechazadas.AutoSize = true;
             this.lblRechazadas.BackColor = System.Drawing.Color.Transparent;
+            this.lblRechazadas.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRechazadas.ForeColor = System.Drawing.Color.Crimson;
             this.lblRechazadas.Location = new System.Drawing.Point(13, 46);
             this.lblRechazadas.Name = "lblRechazadas";
-            this.lblRechazadas.Size = new System.Drawing.Size(14, 16);
+            this.lblRechazadas.Size = new System.Drawing.Size(16, 20);
             this.lblRechazadas.TabIndex = 3;
             this.lblRechazadas.Text = "0";
             // 
@@ -358,37 +387,83 @@
             // 
             this.lblRechazadasPrincipal.AutoSize = true;
             this.lblRechazadasPrincipal.BackColor = System.Drawing.Color.Transparent;
-            this.lblRechazadasPrincipal.Location = new System.Drawing.Point(13, 13);
+            this.lblRechazadasPrincipal.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRechazadasPrincipal.Location = new System.Drawing.Point(0, 13);
             this.lblRechazadasPrincipal.Name = "lblRechazadasPrincipal";
-            this.lblRechazadasPrincipal.Size = new System.Drawing.Size(153, 16);
+            this.lblRechazadasPrincipal.Size = new System.Drawing.Size(154, 20);
             this.lblRechazadasPrincipal.TabIndex = 2;
             this.lblRechazadasPrincipal.Text = "Solicitudes Rechazadas";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(576, 215);
+            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label12.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(689, 257);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 16);
+            this.label12.Size = new System.Drawing.Size(171, 38);
             this.label12.TabIndex = 24;
             this.label12.Text = "Descripcion:";
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(707, 209);
+            this.txtDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDescripcion.Location = new System.Drawing.Point(879, 260);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(153, 22);
+            this.txtDescripcion.Size = new System.Drawing.Size(125, 22);
             this.txtDescripcion.TabIndex = 23;
             // 
-            // pictureBox1
+            // tableLayoutPanel1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-18, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 407);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.tableLayoutPanel1.ColumnCount = 11;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 230F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.cmbCategoria, 5, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 3, 7);
+            this.tableLayoutPanel1.Controls.Add(this.cmbEmpleado, 5, 5);
+            this.tableLayoutPanel1.Controls.Add(this.guna2CustomGradientPanel3, 7, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnEnviar, 5, 13);
+            this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 5, 14);
+            this.tableLayoutPanel1.Controls.Add(this.guna2CustomGradientPanel1, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.guna2CustomGradientPanel2, 5, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 7, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label12, 7, 7);
+            this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 9, 7);
+            this.tableLayoutPanel1.Controls.Add(this.txtMonto2, 9, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 5, 9);
+            this.tableLayoutPanel1.Controls.Add(this.dgvResumen, 5, 11);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 15;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.51282F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.48718F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 137F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 177F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 86F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1027, 637);
+            this.tableLayoutPanel1.TabIndex = 25;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // Solicitudes
             // 
@@ -396,28 +471,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1027, 637);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.guna2CustomGradientPanel3);
-            this.Controls.Add(this.guna2CustomGradientPanel2);
-            this.Controls.Add(this.guna2CustomGradientPanel1);
-            this.Controls.Add(this.cmbCategoria);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnEnviar);
-            this.Controls.Add(this.dgvResumen);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.cmbEmpleado);
-            this.Controls.Add(this.txtMonto2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Solicitudes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitudes";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResumen)).EndInit();
@@ -427,9 +489,9 @@
             this.guna2CustomGradientPanel2.PerformLayout();
             this.guna2CustomGradientPanel3.ResumeLayout(false);
             this.guna2CustomGradientPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -465,5 +527,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

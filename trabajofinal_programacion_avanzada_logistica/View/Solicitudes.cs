@@ -209,6 +209,16 @@ namespace trabajofinal_programacion_avanzada_logistica.View
                 dgvResumen.AutoGenerateColumns = true;
             }
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblMontoTotalPrincipal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
