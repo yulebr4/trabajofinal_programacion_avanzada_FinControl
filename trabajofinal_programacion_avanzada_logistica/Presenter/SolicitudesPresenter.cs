@@ -139,7 +139,7 @@ namespace trabajofinal_programacion_avanzada_logistica.Presenter
                 await Task.Run(() => _solicitudService.GuardarSolicitud(solicitud));
                     await _correoService.EnviarReporteReembolso(solicitud);
 
-                    _view.MostrarMensajeSeguro("Solicitud enviada correctamente");
+                    _view.MostrarMensajeSeguro("Solicitud enviada correctamente, proceda a guardarlo para tener una constancia");
 
                     // Actualizar datos (asegúrate de que ActualizarDataGrid sea thread-safe)
                     var solicitudes = await Task.Run(() => _solicitudService.ObtenerTodas());

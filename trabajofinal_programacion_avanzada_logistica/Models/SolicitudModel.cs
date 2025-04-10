@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace trabajofinal_programacion_avanzada_logistica.Models
 {
+    //La solicitud de reembolso
+
     public class SolicitudModel
     {
         public int Id { get; set; }

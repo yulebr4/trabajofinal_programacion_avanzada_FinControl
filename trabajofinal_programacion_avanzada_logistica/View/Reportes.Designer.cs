@@ -1,6 +1,6 @@
 ﻿namespace trabajofinal_programacion_avanzada_logistica.View
 {
-    partial class btnEnviar
+    partial class Reportes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(btnEnviar));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reportes));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMenuPrincipal = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,28 +36,24 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnExpandir = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPeriodo = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.dgvReportes = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmbPeriodo = new System.Windows.Forms.ComboBox();
+            this.cmbCategoria2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Indigo;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnMenuPrincipal);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -157,144 +150,93 @@
             this.btnMinimizar.UseVisualStyleBackColor = false;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
-            // label2
+            // lblPeriodo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(241, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 16);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Periodo:";
+            this.lblPeriodo.AutoSize = true;
+            this.lblPeriodo.Location = new System.Drawing.Point(241, 70);
+            this.lblPeriodo.Name = "lblPeriodo";
+            this.lblPeriodo.Size = new System.Drawing.Size(58, 16);
+            this.lblPeriodo.TabIndex = 8;
+            this.lblPeriodo.Text = "Periodo:";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(834, 70);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 16;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(527, 70);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(69, 16);
+            this.lblCategoria.TabIndex = 9;
+            this.lblCategoria.Text = "Categoria:";
+            // 
+            // dgvReportes
+            // 
+            this.dgvReportes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvReportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReportes.Location = new System.Drawing.Point(244, 227);
+            this.dgvReportes.Name = "dgvReportes";
+            this.dgvReportes.RowHeadersWidth = 51;
+            this.dgvReportes.RowTemplate.Height = 24;
+            this.dgvReportes.Size = new System.Drawing.Size(652, 302);
+            this.dgvReportes.TabIndex = 17;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-17, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(216, 407);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cmbPeriodo
+            // 
+            this.cmbPeriodo.FormattingEnabled = true;
+            this.cmbPeriodo.Location = new System.Drawing.Point(320, 62);
+            this.cmbPeriodo.Name = "cmbPeriodo";
+            this.cmbPeriodo.Size = new System.Drawing.Size(121, 24);
+            this.cmbPeriodo.TabIndex = 18;
+            // 
+            // cmbCategoria2
+            // 
+            this.cmbCategoria2.FormattingEnabled = true;
+            this.cmbCategoria2.Location = new System.Drawing.Point(620, 62);
+            this.cmbCategoria2.Name = "cmbCategoria2";
+            this.cmbCategoria2.Size = new System.Drawing.Size(121, 24);
+            this.cmbCategoria2.TabIndex = 19;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(241, 160);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(240, 187);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 16);
+            this.label3.Size = new System.Drawing.Size(183, 23);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Categoria:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(530, 157);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 16);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Usuario:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(530, 103);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 16);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Estado:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(316, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 12;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(600, 151);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 13;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(316, 154);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 14;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(600, 97);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 15;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(762, 157);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Enviar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(853, 157);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Filtrar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(265, 418);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(632, 160);
-            this.dataGridView1.TabIndex = 18;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(262, 383);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(183, 23);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Resumen de Reportes";
-            // 
-            // chart1
-            // 
-            this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDot;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(441, 210);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(259, 150);
-            this.chart1.TabIndex = 20;
-            this.chart1.Text = "chart1";
+            this.label3.Text = "Resumen de Reportes";
             // 
             // btnEnviar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 590);
-            this.Controls.Add(this.chart1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbCategoria2);
+            this.Controls.Add(this.cmbPeriodo);
+            this.Controls.Add(this.dgvReportes);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.lblCategoria);
+            this.Controls.Add(this.lblPeriodo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -304,8 +246,8 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,18 +262,15 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnExpandir;
         private System.Windows.Forms.Button btnMinimizar;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPeriodo;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.DataGridView dgvReportes;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cmbPeriodo;
+        private System.Windows.Forms.ComboBox cmbCategoria2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+
+      
     }
 }

@@ -55,15 +55,18 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBoxSatisfaccion.SuspendLayout();
             this.groupBoxMejoras.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Indigo;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnMenuPrincipal);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -337,6 +340,16 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             this.radioButton6.Text = "Interfaz de Usuario";
             this.radioButton6.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-23, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(216, 407);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
             // ExperienciaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -363,6 +376,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             this.groupBoxSatisfaccion.PerformLayout();
             this.groupBoxMejoras.ResumeLayout(false);
             this.groupBoxMejoras.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,5 +412,6 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         private System.Windows.Forms.RadioButton radioButton6;
         private EventHandler label4_Click;
         private EventHandler btnEnviar_Click;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

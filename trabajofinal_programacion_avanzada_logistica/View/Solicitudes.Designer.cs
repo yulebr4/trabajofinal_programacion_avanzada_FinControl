@@ -58,17 +58,20 @@
             this.lblRechazadasPrincipal = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResumen)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.guna2CustomGradientPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Indigo;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnMenuPrincipal);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -377,6 +380,16 @@
             this.txtDescripcion.Size = new System.Drawing.Size(153, 22);
             this.txtDescripcion.TabIndex = 23;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-18, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(216, 407);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
             // Solicitudes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -414,6 +427,7 @@
             this.guna2CustomGradientPanel2.PerformLayout();
             this.guna2CustomGradientPanel3.ResumeLayout(false);
             this.guna2CustomGradientPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,5 +464,6 @@
         private System.Windows.Forms.Label lblRechazadasPrincipal;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

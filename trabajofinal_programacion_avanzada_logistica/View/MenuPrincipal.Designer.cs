@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
             this.btnAcercaDe = new FontAwesome.Sharp.IconButton();
@@ -45,10 +51,15 @@
             this.btnMazimizar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.panelFondo = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelBarraTitulo.SuspendLayout();
+            this.panelFondo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -104,7 +115,7 @@
             this.btnAcercaDe.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAcercaDe.IconSize = 40;
             this.btnAcercaDe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAcercaDe.Location = new System.Drawing.Point(0, 392);
+            this.btnAcercaDe.Location = new System.Drawing.Point(0, 455);
             this.btnAcercaDe.Name = "btnAcercaDe";
             this.btnAcercaDe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAcercaDe.Size = new System.Drawing.Size(230, 81);
@@ -128,7 +139,7 @@
             this.btnExpeUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExpeUsuario.IconSize = 40;
             this.btnExpeUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExpeUsuario.Location = new System.Drawing.Point(0, 311);
+            this.btnExpeUsuario.Location = new System.Drawing.Point(0, 374);
             this.btnExpeUsuario.Name = "btnExpeUsuario";
             this.btnExpeUsuario.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnExpeUsuario.Size = new System.Drawing.Size(230, 81);
@@ -152,7 +163,7 @@
             this.btnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReportes.IconSize = 40;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 243);
+            this.btnReportes.Location = new System.Drawing.Point(0, 306);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnReportes.Size = new System.Drawing.Size(230, 68);
@@ -176,7 +187,7 @@
             this.btnSolicitudes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSolicitudes.IconSize = 40;
             this.btnSolicitudes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSolicitudes.Location = new System.Drawing.Point(0, 169);
+            this.btnSolicitudes.Location = new System.Drawing.Point(0, 232);
             this.btnSolicitudes.Name = "btnSolicitudes";
             this.btnSolicitudes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSolicitudes.Size = new System.Drawing.Size(230, 74);
@@ -200,7 +211,7 @@
             this.btnGastos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGastos.IconSize = 40;
             this.btnGastos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGastos.Location = new System.Drawing.Point(0, 102);
+            this.btnGastos.Location = new System.Drawing.Point(0, 165);
             this.btnGastos.Name = "btnGastos";
             this.btnGastos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnGastos.Size = new System.Drawing.Size(230, 67);
@@ -219,7 +230,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(230, 102);
+            this.panel1.Size = new System.Drawing.Size(230, 165);
             this.panel1.TabIndex = 0;
             // 
             // btnMenuM
@@ -234,10 +245,10 @@
             this.btnMenuM.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMenuM.IconSize = 40;
             this.btnMenuM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuM.Location = new System.Drawing.Point(150, 3);
+            this.btnMenuM.Location = new System.Drawing.Point(168, -27);
             this.btnMenuM.Name = "btnMenuM";
             this.btnMenuM.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnMenuM.Size = new System.Drawing.Size(74, 57);
+            this.btnMenuM.Size = new System.Drawing.Size(74, 120);
             this.btnMenuM.TabIndex = 24;
             this.btnMenuM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMenuM.UseVisualStyleBackColor = true;
@@ -246,9 +257,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-67, -80);
+            this.pictureBox1.Location = new System.Drawing.Point(-47, -23);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(294, 235);
+            this.pictureBox1.Size = new System.Drawing.Size(294, 169);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -322,12 +333,46 @@
             // panelFondo
             // 
             this.panelFondo.BackColor = System.Drawing.Color.Lavender;
+            this.panelFondo.Controls.Add(this.chart2);
+            this.panelFondo.Controls.Add(this.chart1);
             this.panelFondo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFondo.Location = new System.Drawing.Point(230, 60);
             this.panelFondo.Name = "panelFondo";
             this.panelFondo.Size = new System.Drawing.Size(1021, 649);
             this.panelFondo.TabIndex = 2;
             this.panelFondo.Tag = "Exp de Usuario";
+            // 
+            // chart1
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(62, 261);
+            this.chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(484, 300);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
+            // chart2
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
+            this.chart2.Location = new System.Drawing.Point(648, 261);
+            this.chart2.Name = "chart2";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart2.Series.Add(series1);
+            this.chart2.Size = new System.Drawing.Size(300, 300);
+            this.chart2.TabIndex = 1;
+            this.chart2.Text = "chart2";
             // 
             // MenuPrincipal
             // 
@@ -347,6 +392,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelBarraTitulo.ResumeLayout(false);
             this.panelBarraTitulo.PerformLayout();
+            this.panelFondo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -369,5 +417,7 @@
         private FontAwesome.Sharp.IconButton btnAcercaDe;
         private FontAwesome.Sharp.IconButton btnMenuM;
         private FontAwesome.Sharp.IconButton btnLogOut;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
     }
 }

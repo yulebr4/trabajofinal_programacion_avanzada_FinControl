@@ -54,14 +54,17 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             this.comboBoxEmpleado = new System.Windows.Forms.ComboBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGastos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Indigo;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnMenuPrincipal);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -300,6 +303,16 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             this.label7.TabIndex = 22;
             this.label7.Text = "Descripcion:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-9, 48);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(216, 407);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
             // Gastos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -330,6 +343,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGastos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,5 +376,6 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         private ComboBox comboBoxEmpleado;
         private TextBox txtDescripcion;
         private Label label7;
+        private PictureBox pictureBox1;
     }
 }
