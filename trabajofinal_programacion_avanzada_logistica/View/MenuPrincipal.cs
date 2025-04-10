@@ -36,6 +36,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             InitializeComponent();
             ContraerMenu();
 
+
             //Tamaño de los bordes
             this.Padding = new Padding(borderSize);
 

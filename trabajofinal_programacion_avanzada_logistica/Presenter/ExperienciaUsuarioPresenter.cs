@@ -16,6 +16,8 @@ namespace trabajofinal_programacion_avanzada_logistica.Presenter
     {
         private readonly IExperienciaUsuario _view;
         private readonly ICorreoService _emailService;
+        private List<ExperienciaUsuarioModel> _historicoFeedback = new List<ExperienciaUsuarioModel>();
+
 
         public ExperienciaUsuarioPresenter(IExperienciaUsuario view, EmailConfig emailConfig)
         {
@@ -43,6 +45,8 @@ namespace trabajofinal_programacion_avanzada_logistica.Presenter
                 _view.MostrarMensaje($"Error al enviar: {ex.Message}");
             }
         }
+
+
 
     }
     

@@ -12,5 +12,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         ExperienciaUsuarioModel ObtenerExperiencia();
         void MostrarMensaje(string mensaje);
 
+
+
     }
 }

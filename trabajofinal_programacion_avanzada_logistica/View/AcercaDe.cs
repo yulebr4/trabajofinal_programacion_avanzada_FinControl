@@ -15,7 +15,10 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         public AcercaDe()
         {
             InitializeComponent();
+
+
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

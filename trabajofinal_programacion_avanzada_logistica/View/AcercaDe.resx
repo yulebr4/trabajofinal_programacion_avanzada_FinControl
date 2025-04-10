@@ -117,14 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="guna2HtmlLabel1.Text" xml:space="preserve">
-    <value>FinControl es un sistema integral de gestión de gastos corporativos y solicitudes de reembolso, diseñado para simplificar y agilizar el proceso de registro, aprobación y seguimiento de gastos empresariales. El sistema permite a los empleados registrar sus gastos, adjuntar comprobantes digitales, y solicitar reembolsos de manera eficiente, mientras proporciona a los administradores y al departamento financiero herramientas robustas para la revisión y aprobación.</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfoAAAGLCAYAAAAva1AtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAA/7JJREFUeF7svQeYJFXZ/v1m/74GUElGFBUEBBUEX8QAIohiRAQkKSoSRMUACoog
+        vAAADrwBlbxySQAA/7JJREFUeF7svQeYJFXZ/v1m/74GUElGFBUEBBUEX8QAIohiRAQkKSoSRMUACoog
         RpCgggomRFEwgGAWJLOwcXLnnKqrunJO55z+rrup3m+2enZ2ZhO7s2eu63ftzqkwMz099Zwn3c+/9fv9
         f+NwOBwOh7M0GVngcDgcDoezdBhZ4HA4HA6Hs3QYWeBwOBwOh7N0GFngcDgcDoezdBhZ4HA4HA6Hs3QY
         WeBwOBwOh7N0GFngcDgcDoezdBhZ4HA4HA6Hs3QYWeBwOBwOh7N0GFngcDgcDoezdBhZ4HA4HA6Hs3QY
@@ -1349,6 +1346,9 @@
         Pxeste3f4RwDwMek9rphtz5nEaP8MnodhFVvn9Ba3A3/YrKz1pNvvtPpdJqxA4VsF58s6Xb/AAAAAElF
         TkSuQmCC
 </value>
+  </data>
+  <data name="guna2HtmlLabel1.Text" xml:space="preserve">
+    <value>FinControl es un sistema integral de gestión de gastos corporativos y solicitudes de reembolso, diseñado para simplificar y agilizar el proceso de registro, aprobación y seguimiento de gastos empresariales. El sistema permite a los empleados registrar sus gastos, adjuntar comprobantes digitales, y solicitar reembolsos de manera eficiente, mientras proporciona a los administradores y al departamento financiero herramientas robustas para la revisión y aprobación.</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>FinControl fue fundado y desarrollado por Yulenny Bonilla como parte de un proyecto de programación avanzada. La visión de Yulenny era crear una solución que no solo facilitara la gestión de gastos empresariales, sino que también mejorara la transparencia y eficiencia en los procesos financieros internos de cualquier organización.
