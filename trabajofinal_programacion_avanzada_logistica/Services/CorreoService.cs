@@ -12,25 +12,47 @@ using trabajofinal_programacion_avanzada_logistica.View;
 
 namespace trabajofinal_programacion_avanzada_logistica.Services
 {
+
+    /// Servicio encargado de gestionar el envío de correos electrónicos para notificaciones 
+    /// relacionadas con experiencias de usuario y solicitudes de reembolso.
+    /// SOLID: 
+    /// - Principio de Responsabilidad Única (SRP): Esta clase se encarga exclusivamente de enviar correos.
+    /// - Principio de Inversión de Dependencia (DIP): Depende de abstracciones (ICorreoService) y no de implementaciones concretas.
+    /// MVP:
+    /// - Forma parte del componente Modelo dentro de la arquitectura MVP, encapsulando la lógica de negocio
+    ///   relacionada con comunicaciones por correo electrónico.
     public class CorreoService : ICorreoService
     {
+
+        // Campo privado que almacena la configuración de correo electrónico
         private readonly EmailConfig _config;
 
+
+        /// - Principio de Inversión de Dependencia (DIP): Recibe la configuración como dependencia,
+        ///   permitiendo mayor flexibilidad y facilidad para pruebas unitarias.
         public CorreoService(EmailConfig config)
         {
             _config = config;
         }
 
+
+        /// Envía un correo electrónico con la información de experiencia del usuario.
+        /// - Principio de Responsabilidad Única (SRP): Este método tiene la única responsabilidad
+        ///   de enviar correos de experiencia de usuario. 
         public async Task EnviarCorreoAsync(ExperienciaUsuarioModel experiencia)
         {
             var client = new SmtpClient();
             try
             {
+
+                // Configuración del mensaje de correo
                 var mensaje = new MimeMessage();
                 mensaje.From.Add(new MailboxAddress("Sistema de Feedback", _config.FromEmail));
                 mensaje.To.Add(new MailboxAddress("Administrador", _config.ToEmail));
                 mensaje.Subject = "Nuevo feedback de experiencia de usuario";
 
+
+                // Construcción del cuerpo del mensaje en formato texto y HTML
                 var builder = new BodyBuilder
                 {
                     TextBody = GenerarCuerpo(experiencia),
@@ -39,16 +61,21 @@ namespace trabajofinal_programacion_avanzada_logistica.Services
 
                 mensaje.Body = builder.ToMessageBody();
 
+
+                // Conexión, autenticación y envío del correo
                 await client.ConnectAsync(_config.SmtpServer, _config.SmtpPort, MailKit.Security.SecureSocketOptions.StartTls);
                 await client.AuthenticateAsync(_config.Username, _config.Password);
                 await client.SendAsync(mensaje);
             }
             catch (Exception ex)
             {
+
+                // Manejo de errores durante el envío de correo
                 throw new Exception($"Error al enviar correo: {ex.Message}");
             }
             finally
             {
+                // Garantiza la desconexión y liberación de recursos
                 if (client.IsConnected)
                 {
                     await client.DisconnectAsync(true);

@@ -437,12 +437,6 @@
     <Compile Include="View\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\prueba.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\prueba.Designer.cs">
-      <DependentUpon>prueba.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Reportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -486,9 +480,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\prueba.resx">
-      <DependentUpon>prueba.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>

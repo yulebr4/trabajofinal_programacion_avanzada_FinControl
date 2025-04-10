@@ -13,23 +13,39 @@ using trabajofinal_programacion_avanzada_logistica.Presenter;
 
 namespace trabajofinal_programacion_avanzada_logistica.Presenter
 {
+
+    /// Clase Presenter que actúa como intermediario entre la Vista (IGastosView) y el Repositorio (IGastosRepository).
+    /// Gestiona la lógica de presentación y coordina las operaciones del módulo de gastos.
+    /// Implementa correctamente el patrón MVP (Modelo-Vista-Presentador).
     public class GastosPresenter
     {
+
+        // Referencia a la vista de gastos (Interfaz)
         private readonly IGastosView _view;
+
+        // Referencia al repositorio de gastos (Interfaz)
         private readonly IGastosRepository _repository;
+
+        // Referencia al servicio encargado de generar el PDF (Interfaz)
         private readonly IPdfService _pdfService;
 
+
+        /// Constructor que recibe las dependencias necesarias inyectadas (Principio de Inversión de Dependencias - SOLID).
         public GastosPresenter(IGastosView view, IGastosRepository repository, IPdfService pdfService)
         {
             _view = view ?? throw new ArgumentNullException(nameof(view));
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
             _pdfService = pdfService ?? throw new ArgumentNullException(nameof(pdfService));
 
+
+            // Suscripción de eventos de la vista a métodos manejadores del presentador
             _view.CargarGastos += OnCargarGastos;
             _view.GuardarGasto += OnGuardarGasto;
             _view.GenerarPdf += OnGenerarPdf;
         }
 
+
+        /// Evento que carga y muestra la lista de gastos desde el repositorio.
         private void OnCargarGastos(object sender, EventArgs e)
         {
             try
@@ -43,6 +59,9 @@ namespace trabajofinal_programacion_avanzada_logistica.Presenter
             }
         }
 
+
+        /// Evento encargado de guardar un nuevo gasto.
+        /// Recoge datos de la vista y los almacena usando el repositorio.
         private void OnGuardarGasto(object sender, EventArgs e)
         {
             try
@@ -57,10 +76,10 @@ namespace trabajofinal_programacion_avanzada_logistica.Presenter
                     ComprobantePath = _view.ComprobantePath
                 };
 
-                _repository.AgregarGasto(gasto);
+                _repository.AgregarGasto(gasto); // Guardar en BD
                 _view.LimpiarFormulario();
                 _view.MostrarMensaje("Gasto guardado correctamente", "Éxito");
-                OnCargarGastos(sender, e);
+                OnCargarGastos(sender, e);  // Recargar lista de gastos
             }
             catch (Exception ex)
             {
@@ -68,6 +87,9 @@ namespace trabajofinal_programacion_avanzada_logistica.Presenter
             }
         }
 
+
+        /// Evento que genera un archivo PDF con los datos del gasto.
+        /// Valida previamente los datos.
         private void OnGenerarPdf(object sender, EventArgs e)
         {
             try
@@ -88,7 +110,7 @@ namespace trabajofinal_programacion_avanzada_logistica.Presenter
                     Empleado = _view.Empleado
                 };
 
-                _view.ComprobantePath = _pdfService.GenerarComprobantePdf(gasto);
+                _view.ComprobantePath = _pdfService.GenerarComprobantePdf(gasto); // Llamada al servicio PDF
                 _view.MostrarMensaje($"PDF generado en: {_view.ComprobantePath}", "Éxito");
             }
             catch (Exception ex)

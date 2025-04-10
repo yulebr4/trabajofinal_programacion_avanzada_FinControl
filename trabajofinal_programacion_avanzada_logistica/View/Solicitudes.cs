@@ -13,22 +13,37 @@ using trabajofinal_programacion_avanzada_logistica.Services;
 
 namespace trabajofinal_programacion_avanzada_logistica.View
 {
+
+    // Clase que representa el formulario de Solicitudes
+    // Implementa la interfaz ISolicitudView (del contrato MVP)
     public partial class Solicitudes : Form, ISolicitudView
     {
+
+        // Declaración del Presenter (parte del patrón MVP)
         private SolicitudesPresenter _presenter;
 
-
+        // Constructor del formulario
         public Solicitudes()
         {
+
+            // Inicializa los controles visuales
             InitializeComponent();
+
+            // El DataGridView generará columnas automáticamente
             dgvResumen.AutoGenerateColumns = true;
+
+            // Carga las categorías en el ComboBox
             LoadCategories();
+
+            // Inyección de dependencias: Instancia el presenter y los servicios
             _presenter = new SolicitudesPresenter(this, new SolicitudService(), new CorreoService(new EmailConfig()));
             
 
 
         }
 
+
+        // Propiedades de la interfaz ISolicitudView - Encapsulan los controles del formulario
         public string Empleado
         {
             get => cmbEmpleado.Text;
@@ -71,10 +86,13 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             set => lblRechazadas.Text = value.ToString();
         }
 
+        // Muestra un mensaje en pantalla
         public void MostrarMensaje(string mensaje)
         {
             MessageBox.Show(mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        // Habilita o deshabilita el botón de Enviar de forma segura (Multi-threading)
         public void HabilitarBotonEnviar(bool habilitar)
         {
             if (btnEnviar.InvokeRequired)
@@ -85,6 +103,8 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             btnEnviar.Enabled = habilitar;
         }
 
+
+        // Muestra un mensaje de forma segura (invoca el hilo de UI si es necesario)
         public void MostrarMensajeSeguro(string mensaje)
         {
             if (this.InvokeRequired)
@@ -95,6 +115,8 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             MessageBox.Show(mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+
+        // Actualiza el cursor de forma segura (por ejemplo: esperando un proceso)
         public void ActualizarCursor(Cursor cursor)
         {
             // Verifica si necesitas invocar (si se llama desde otro hilo)
@@ -109,6 +131,7 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         }
 
 
+        // Carga las categorías de gastos en el ComboBox
         private void LoadCategories()
         {
             cmbCategoria.Items.AddRange(new object[] {
@@ -123,6 +146,8 @@ namespace trabajofinal_programacion_avanzada_logistica.View
                 "Otros"
             });
         }
+
+        // Botón para volver al menú principal
         private void btnMenuPrincipal_Click(object sender, EventArgs e)
         {
 
@@ -134,13 +159,15 @@ namespace trabajofinal_programacion_avanzada_logistica.View
         }
 
 
-    
 
+        // Minimizar ventana
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
+
+        // Maximizar/Restaurar ventana
         private void btnExpandir_Click(object sender, EventArgs e)
         {
 
@@ -151,11 +178,15 @@ namespace trabajofinal_programacion_avanzada_logistica.View
                 this.WindowState = FormWindowState.Normal;
         }
 
+
+        // Cerrar aplicación
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+
+        // Evento del botón Enviar (envía la solicitud mediante el Presenter)
         private async void btnEnviar_Click(object sender, EventArgs e)
         {
             await _presenter.EnviarSolicitud();
@@ -163,6 +194,8 @@ namespace trabajofinal_programacion_avanzada_logistica.View
 
 
 
+
+        // Evento del botón Guardar (guarda solicitud localmente)
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -191,6 +224,8 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             }
         }
 
+
+        // Limpia los campos del formulario
         private void LimpiarCampos()
         {
             Empleado = string.Empty;
@@ -199,6 +234,8 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             Monto = 0;
         }
 
+
+        // Actualiza el DataGridView con las solicitudes existentes
         public void ActualizarDataGrid(IEnumerable<SolicitudModel> solicitudes)
         {
             dgvResumen.DataSource = solicitudes.ToList();

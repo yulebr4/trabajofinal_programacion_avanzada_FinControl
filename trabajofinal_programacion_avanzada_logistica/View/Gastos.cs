@@ -16,31 +16,61 @@ using trabajofinal_programacion_avanzada_logistica.Services;
 
 namespace trabajofinal_programacion_avanzada_logistica.View
 {
+
+    // Esta clase implementa la vista de la arquitectura MVP
+    // Implementa la interfaz IGastosView para cumplir con el principio de Inversión de Dependencias (D en SOLID)
     public partial class Gastos : Form, IGastosView
     {
+
+        // Eventos que serán manejados por el presentador, cumpliendo con el patrón Observer
+        // Estos eventos permiten la comunicación desde la Vista hacia el Presentador
         public event EventHandler CargarGastos;
         public event EventHandler GuardarGasto;
         public event EventHandler GenerarPdf;
 
+
+        // Referencia al presentador que gestionará la lógica de negocio
         private GastosPresenter _presenter;
 
+
+        // Constructor de la clase
         public Gastos()
         {
+            // Constructor de la clase
             InitializeComponent();
+
+            // Configura el presentador
             InitializePresenter();
+
+            // Configura la tabla de datos
             ConfigureDataGridView();
+
+            // Carga las categorías disponibles
             LoadCategories();
         }
 
+
+        // Método que inicializa el presentador con sus dependencias
+        // Aplicación del principio de Inyección de Dependencias
         private void InitializePresenter()
         {
+
+            // Crea la conexión a la base de datos
             var context = new FinControlDBEntities();
+
+            // Crea el repositorio de datos
             var repository = new GastosRepository(context);
+
+            // Crea el servicio para generar PDFs
             var pdfService = new PdfService();
 
+
+            // Crea el presentador y le pasa la vista (this) y las dependencias necesarias
             _presenter = new GastosPresenter(this, repository, pdfService);
         }
 
+
+        // Configura las columnas del DataGridView para mostrar los gastos
         private void ConfigureDataGridView()
         {
             dataGridViewGastos.AutoGenerateColumns = false;
@@ -51,6 +81,8 @@ namespace trabajofinal_programacion_avanzada_logistica.View
             dataGridViewGastos.Columns.Add("Empleado", "Empleado");
         }
 
+
+        // Carga las categorías de gastos en el combobox
         private void LoadCategories()
         {
             comboBoxCategoria.Items.AddRange(new object[] {
