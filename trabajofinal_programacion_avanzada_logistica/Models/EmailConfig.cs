@@ -10,9 +10,9 @@ namespace trabajofinal_programacion_avanzada_logistica.Models
     {
         public string SmtpServer { get; set; } = "smtp.gmail.com";
         public int SmtpPort { get; set; } = 587;
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string FromEmail { get; set; }
-        public string ToEmail { get; set; }
+        public string Username { get; set; } = "fincontrol521@gmail.com";
+        public string Password { get; set; } = "ixfq rozy dkxx lway";
+        public string FromEmail { get; set; } = "fincontrol521@gmail.com";
+        public string ToEmail { get; set; } = "fincontrol521@gmail.com";
     }
 }
